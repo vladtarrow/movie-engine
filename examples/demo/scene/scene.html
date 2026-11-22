@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+  Demo of engine/tools/html-render.mjs: a 3 s title card with a 3D flip, a cursor and a click ripple.
+    engine\node.cmd engine\tools\html-render.mjs examples\demo\scene\scene.html examples\demo\out --frames 0,30,60,89   check frames
+    engine\node.cmd engine\tools\html-render.mjs examples\demo\scene\scene.html examples\demo\out\scene.mp4               video
+  Contract: window.SCENE = { fps, frames, width, height }, window.ready (promise), window.render(seconds) (pure function of time).
+  Never set a child to visibility: visible; it shows through a hidden parent (use the empty value).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demo scene</title>
+<style>
+  @font-face { font-family: Poppins; font-weight: 700; src: url("../../../engine/fonts/Poppins-Bold.ttf"); }
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #f7f5ff; font-family: Poppins, sans-serif; }
+  .full { position: absolute; inset: 0; }
+  #stage { perspective: 2000px; }
+  #card { position: absolute; left: 460px; top: 300px; width: 1000px; height: 480px; border-radius: 48px; background: #fff;
+          box-shadow: 0 40px 90px rgba(38, 19, 46, .18); display: flex; align-items: center; justify-content: center;
+          font-size: 120px; font-weight: 700; color: #26132e; transform-origin: 50% 50%; }
+  #card b { color: #f0337b; }
+  #cursor { position: absolute; left: 0; top: 0; width: 44px; height: 44px; }
+  #ripple { position: absolute; left: 0; top: 0; border: 6px solid #8a5cf6; border-radius: 50%; }
+</style>
+</head>
+<body>
+<div id="stage" class="full">
+  <div id="card">Hello, <b>&nbsp;brand</b></div>
+  <div id="ripple"></div>
+  <svg id="cursor" viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#26132e" stroke="#fff" stroke-width="1.5"/></svg>
+</div>
+<script>
+const FPS = 30
+window.SCENE = { fps: FPS, frames: 90, width: 1920, height: 1080 }
+
+const $ = id => document.getElementById(id)
+const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v))
+const lerp = (a, b, p) => a + (b - a) * p
+const span = (t, start, len) => clamp((t - start) / len)
+const out = p => 1 - (1 - p) ** 3
+const back = p => 1 + 2.4 * (p - 1) ** 3 + 1.4 * (p - 1) ** 2
+
+const CLICK = 1.6   // seconds
+
+window.render = t => {
+  // the card flips in, then bounces when it is clicked
+  const flip = out(span(t, 0.1, 0.9))
+  const press = span(t, CLICK, 0.12) - span(t, CLICK + 0.12, 0.3)
+  $('card').style.transform = `rotateX(${lerp(-80, 0, flip)}deg) scale(${lerp(0.8, 1, back(span(t, 0.1, 0.9))) - 0.04 * press})`
+  $('card').style.opacity = flip
+
+  // the cursor glides to the card and clicks
+  const move = out(span(t, 0.7, 0.9))
+  const x = lerp(1500, 1120, move); const y = lerp(980, 560, move)
+  $('cursor').style.transform = `translate(${x}px, ${y}px) scale(${1 - 0.15 * press})`
+
+  const r = span(t, CLICK, 0.6)
+  const size = 20 + 160 * out(r)
+  const ripple = $('ripple')
+  ripple.style.width = ripple.style.height = `${size}px`
+  ripple.style.transform = `translate(${x + 6 - size / 2}px, ${y + 4 - size / 2}px)`
+  ripple.style.opacity = r > 0 && r < 1 ? 1 - r : 0
+}
+
+window.ready = (async () => {
+  await document.fonts.load('700 100px Poppins')
+  if (!document.fonts.check('700 100px Poppins')) throw new Error('Poppins did not load')
+})()
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+Kdenlive menu actions (kdenliveui.rc): 222
+Rows in the map: 235 (menu actions + 13 clip jobs/panels)
+  same operation, run end to end: 120
+  reached another way or only partly: 11
+      export_project: clips and gaps only: no effects, compositions or titles
+      file_save_as: archive or a file copy
+      file_save_copy: archive copies the media as well
+      import_project: clips and gaps only: no effects, compositions or titles
+      manage_subtitle: one subtitle track per sequence
+      multicam_tool: no live angle switching: cuts are made with split, remove and track-set -Hide
+      open_backup: lists Kdenlive's backups
+      save_selection: a sequence instead of an .mlt playlist file
+      save_to_bin: a sequence instead of a playlist clip
+      send_library: kept as a sequence of this project, not in Kdenlive's shared library
+      job:timewarp: renders a new H.264 file (CRF 18) instead of an .mlt clip
+  view/playback/selection/settings only: 103
+  not possible: 1
+      audio_recognition: speech-to-text needs Kdenlive's Whisper/Vosk Python packages (not installed
+GAPS (4):
+PROOF HAS FAILURES: docs\proof\clitest.txt
+PROOF HAS FAILURES: docs\proof\live.txt
+NO PROOF: docs\proof\portable.txt
+NOT PROVEN: 'kdenlive-bg' for file_open

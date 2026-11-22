@@ -1,0 +1,32 @@
+live-update test, 2026-11-22 20:05
+PASS 16  FAIL 1
+
+PASS  test Kdenlive loads the project :: length=00:00:02:00
+PASS  AI edit appears in the open editor :: kdp exit 0 added 'red' to V1 at 2 s length=00:00:04:29
+PASS  watcher reports a confirmed reload :: confirmed=1
+PASS  two AI edits in a row both appear :: exit 0,0 added 'red' to V1 at 5 s added 'red' to V1 at 6 s length=00:00:06:29
+PASS  user edit makes the document modified :: 
+PASS  reload refuses while the user has unsaved edits :: exit 2 UNSAVED: the user has unsaved edits; nothing was reloaded
+PASS  AI command saves the user edit first and keeps it :: exit 0 added 'red' to V1 at 7 s folders 1 -> 2
+PASS  AI write right after a save still reloads :: length=00:00:08:29
+PASS  reading commands see unsaved user edits :: exit 0 folders 2 -> 3
+PASS  conflict: user edits stay, AI version is kept :: conflict logged=True copies=1 kdp exit 0
+PASS  pull saves and confirms :: exit 0 saved the user's edits to the project file
+PASS  manual reload is confirmed :: exit 0 reload confirmed in 4 s
+PASS  no Kdenlive: reload says so instead of success :: exit 3
+PASS  big project copy loads :: 
+FAIL  big project: success is reported only after the real reload :: exit 4 after 276 s reload is blocked by a dialog: 'Загрузка проекта - Kdenlive'
+PASS  a reload that cannot be confirmed in time is a failure :: exit 4 a dialog is open in Kdenlive: 'Загрузка проекта - Kdenlive'
+PASS  the real big project was not touched :: 
+
+--- watcher log
+2026-11-22 19:46:48 watch start pid=47928 project=<sandbox>\livetest.kdenlive
+2026-11-22 19:47:02 AI change -> reload: exit 0 reload confirmed in 4 s
+2026-11-22 19:47:19 AI change -> reload: exit 0 reload confirmed in 4 s
+2026-11-22 19:47:25 AI change -> reload: exit 0 reload confirmed in 4 s (NOTE: Kdenlive changed the document while loading it)
+2026-11-22 19:47:31 kdenlive saved the project (user edits now on disk)
+2026-11-22 19:47:42 AI change -> reload: exit 0 reload confirmed in 4 s
+2026-11-22 19:47:53 kdenlive saved the project (user edits now on disk)
+2026-11-22 19:48:10 CONFLICT: file changed while Kdenlive has unsaved edits; not reloading. Copy kept: <sandbox>\.kdp-history\livetest\conflict\20261122-194810.kdenlive. Run kd-pull.ps1 and re-apply the change.
+2026-11-22 19:48:17 kdenlive saved the project (user edits now on disk)
+2026-11-22 19:48:29 watch stop

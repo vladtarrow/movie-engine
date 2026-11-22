@@ -1,0 +1,236 @@
+action;kind;commands;note
+activate_all_targets;ui;;target-track toggles only steer manual insert in the GUI
+add_animation_clip;op;bin-add;
+add_clip;op;bin-add;
+add_clip_marker;op;marker;
+add_color_clip;op;bin-color;
+add_marker_guide_1;op;guide-add;guide with category 0 (-CategoryIndex)
+add_marker_guide_2;op;guide-add;category 1
+add_marker_guide_3;op;guide-add;category 2
+add_marker_guide_4;op;guide-add;category 3
+add_marker_guide_5;op;guide-add;category 4
+add_marker_guide_6;op;guide-add;category 5
+add_marker_guide_7;op;guide-add;category 6
+add_marker_guide_8;op;guide-add;category 7
+add_marker_guide_9;op;guide-add;category 8
+add_marker_guide_10;op;guide-add;category 9
+add_marker_guide_quickly;op;guide-add;
+add_playlist_clip;op;playlist-clip;
+add_sequence_marker;op;guide-add;
+add_slide_clip;op;slideshow;
+add_subtitle;op;sub-add;
+add_text_clip;op;title;
+add_text_template_clip;op;title-template;
+archive_project;op;archive;
+audio_recognition;na;;speech-to-text needs Kdenlive's Whisper/Vosk Python packages (not installed
+audiomixer_button;ui;;shows the mixer panel
+clear_render_timeline_zone;ui;;timeline preview cache (performance only)
+clear_undo_history;op;clear-history;
+clip_disable;op;disable;
+clip_in_project_tree;ui;;selects the clip in the bin
+clip_split;op;split;
+clip_switch;op;enable;switch clip enabled state
+copy_debuginfo;ui;;
+copy_to_sequence;op;copy-to-sequence;
+create_folder;op;folder;
+cut_timeline_clip;op;split;
+delete_all_clip_markers;op;marker-remove;
+delete_all_clips;op;track-clear;
+delete_all_sequence_markers;op;guide-clear;
+delete_all_spaces;op;spaces-remove-all;
+delete_clip;op;bin-remove;
+delete_clip_marker;op;marker-remove;
+delete_effects;op;effect-clear;
+delete_sequence_marker;op;guide-remove;
+delete_space;op;space-remove;
+delete_space_all_tracks;op;space-remove;
+delete_timeline_clip;op;remove;
+delete_track;op;track-remove;
+deselect_timeline_clip;ui;;selection
+deselect_timeline_transition;ui;;selection
+disable_subtitle;op;sub-state;
+disable_timeline_effects;op;effects-all;
+duplicate_clip;op;bin-duplicate;
+edit_clip;op;bin-set;
+edit_clip_marker;op;marker-set;
+edit_copy;op;copy;
+edit_cut;op;move;cut + paste = move
+edit_item_duration;op;trim;
+edit_item_speed;op;speed;
+edit_paste;op;copy;
+edit_redo;op;redo;
+edit_sequence_marker;op;guide-set;
+edit_undo;op;undo;
+expand_timeline_clip;op;expand;
+export_guides;op;guide-export;
+export_project;equiv;otio-export;clips and gaps only: no effects, compositions or titles
+export_subtitle;op;sub-export;
+extract_clip;op;remove;with -Ripple
+favorite_effects;ui;;effect list filter
+file_new;op;new;
+file_open;op;kdenlive-bg;engine\kdenlive-bg.ps1 <project>
+file_open_recent;ui;;
+file_revert;op;kd-reload;confirmed reload (docs/proof/live.txt)
+file_save;op;kd-pull;engine\kd-pull.ps1 + every kdp.ps1 save
+file_save_as;equiv;archive;archive or a file copy
+file_save_copy;equiv;archive;archive copies the media as well
+fit_all_tracks;ui;;zoom
+focus_timecode;ui;;
+friendly_transcoder;op;transcode;
+fullscreen;ui;;
+grab_item;ui;;keyboard move mode
+group_clip;op;group;
+import_project;equiv;otio-import;clips and gaps only: no effects, compositions or titles
+import_subtitle;op;sub-import;
+insert_at_timecode;op;add;
+insert_mode;op;add;add -Insert
+insert_project_tree;op;subclip;monitor zone -> bin subclip
+insert_space;op;space-insert;
+insert_to_in_point;op;add;add -Insert
+insert_track;op;track-add;
+load_layouts;ui;;
+locate_clip;op;relink;
+lock_guides;ui;;guide lock is a GUI interaction lock
+lock_subtitle;op;sub-state;
+manage_cache;ui;;
+manage_layout;ui;;
+manage_subtitle;equiv;sub-add;one subtitle track per sequence
+mark_in;ui;;monitor zone in (zone command sets the timeline zone)
+mark_out;ui;;monitor zone out
+master_effects;op;effect-add;-Master
+mix_clip;op;mix;
+mlt_interlace;ui;;preview setting
+mlt_interpolation;ui;;preview setting
+mlt_mute;ui;;preview setting
+mlt_progressive;ui;;preview setting
+mlt_realtime;ui;;preview setting
+mlt_scrub;ui;;preview setting
+monitor_fullscreen;ui;;
+monitor_loop_clip;ui;;playback
+monitor_loop_zone;ui;;playback
+monitor_multitrack;ui;;
+monitor_overlay;ui;;
+monitor_overlay_audiothumb;ui;;
+monitor_overlay_clipjobs;ui;;
+monitor_overlay_fps;ui;;
+monitor_overlay_markers;ui;;
+monitor_overlay_tc;ui;;
+monitor_play;ui;;playback
+monitor_play_zone;ui;;playback
+monitor_play_zone_cursor;ui;;playback
+monitor_seek_backward;ui;;playback
+monitor_seek_backward-one-frame;ui;;playback
+monitor_seek_backward-one-second;ui;;playback
+monitor_seek_forward;ui;;playback
+monitor_seek_forward-one-frame;ui;;playback
+monitor_seek_forward-one-second;ui;;playback
+monitor_seek_guide_backward;ui;;playback
+monitor_seek_guide_forward;ui;;playback
+monitor_seek_snap_backward;ui;;playback
+monitor_seek_snap_forward;ui;;playback
+monitor_zoomin;ui;;
+monitor_zoomout;ui;;
+multicam_tool;equiv;split,track-set;no live angle switching: cuts are made with split, remove and track-set -Hide
+normal_mode;op;add;
+open_backup;equiv;backups;lists Kdenlive's backups
+overwrite_mode;op;add;add -Overwrite
+overwrite_to_in_point;op;add;add -Overwrite
+paste_effects;op;effect-copy;
+prerender_timeline_zone;ui;;timeline preview cache
+project_adjust_profile;op;profile-from-clip;
+project_clean;op;clean;removes unused clips from the bin
+project_find;ui;;
+project_find_next;ui;;
+project_render;op;render;render / render -Preset
+project_render_button;op;render;
+project_settings;op;profile-set;also proxy, zone
+proxy_clip;op;proxy;
+razor_tool;op;split;
+reload_clip;op;bin-reload;
+remove_extract;op;remove;-Ripple
+remove_lift;op;remove;
+renamefile;op;bin-rename;
+replace_clip;op;bin-replace-file;
+replace_in_timeline;op;replace-in-timeline;
+replace_timeline_clip;op;replace-in-timeline;
+reset_config;ui;;application settings
+resize_timeline_clip_end;op;trim;
+resize_timeline_clip_start;op;trim;-NewIn -KeepEnd
+restore_all_sources;ui;;target tracks
+ripple_tool;op;ripple-trim;
+run_wizard;ui;;
+save_layout;ui;;
+save_selection;equiv;copy-to-sequence;a sequence instead of an .mlt playlist file
+save_to_bin;equiv;copy-to-sequence;a sequence instead of a playlist clip
+scale_16_preview;ui;;
+scale_1_preview;ui;;
+scale_2_preview;ui;;
+scale_4_preview;ui;;
+scale_8_preview;ui;;
+scale_no_preview;ui;;
+search_guide;ui;;
+seek_clip_end;ui;;
+seek_clip_start;ui;;
+seek_end;ui;;
+seek_start;ui;;
+seek_zone_end;ui;;
+seek_zone_start;ui;;
+select_add_timeline_clip;ui;;selection
+select_add_timeline_transition;ui;;selection
+select_all_tracks;ui;;selection
+select_timeline_clip;ui;;selection
+select_timeline_transition;ui;;selection
+select_timeline_zone;ui;;selection
+select_tool;ui;;
+select_track;ui;;
+send_library;equiv;copy-to-sequence;kept as a sequence of this project, not in Kdenlive's shared library
+send_sequence;op;copy-to-sequence;
+sequence_next;ui;;tab switch
+sequence_previous;ui;;tab switch
+set_render_timeline_zone;ui;;timeline preview cache
+show_audio_thumbs;ui;;
+show_clip_properties;op;bin-info;
+show_markers;ui;;
+show_titlebars;ui;;
+show_video_thumbs;ui;;
+slip_tool;op;slip;
+snap;ui;;
+spacer_tool;op;space-insert;
+stop_prerender_timeline;ui;;
+styles_menu;ui;;
+subtitle_tool;op;sub-add;
+switch_active_target;ui;;target tracks
+switch_all_targets;ui;;target tracks
+switch_all_track_disabled;op;track-set;-Hide on each track
+switch_all_track_lock;op;track-set;-Lock on each track
+switch_monitor;ui;;
+switch_target_stream;ui;;target tracks
+switch_track_disabled;op;track-set;
+switch_track_lock;op;track-set;
+switch_track_target;ui;;target tracks
+themes_menu;ui;;
+timeline_mode;op;add;edit mode = add flags
+timeline_preview_button;ui;;
+timeline_settings;ui;;
+timeline_timecode;ui;;
+transcode_clip;op;transcode;
+ungroup_clip;op;ungroup;
+unselect_all_tracks;ui;;selection
+unset_render_timeline_zone;ui;;timeline preview cache
+use_timeline_zone_in_edit;op;zone;
+view_zoom_in;ui;;
+view_zoom_out;ui;;
+zoom_fit;ui;;
+job:stabilize;op;stabilize;vid.stab, as in Kdenlive
+job:scenesplit;op;scene-split;clip job
+job:timewarp;equiv;speed-job;renders a new H.264 file (CRF 18) instead of an .mlt clip
+job:custom;op;transcode;custom ffmpeg arguments
+panel:effects;op;effect-add;433 effects, clip/track/master/bin
+panel:effect-templates;op;effect-template;
+panel:compositions;op;comp-add;56 compositions
+panel:bin-effects;op;bin-effect;
+panel:titler;op;title;
+panel:speed-remap;op;remap;
+panel:sequences;op;sequence-add;
+panel:render-presets;op;render;
+panel:project-notes;ui;;notes are text for people

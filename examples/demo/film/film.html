@@ -1,0 +1,36 @@
+<!doctype html>
+<!--
+  Demo of engine/tools/film-render.mjs: four shots, two VO lines, one custom scene. Run from the repository root:
+    engine\node.cmd engine\tools\film-render.mjs examples\demo\film\film.html examples\demo\out --check                  direction errors
+    engine\node.cmd engine\tools\film-render.mjs examples\demo\film\film.html examples\demo\out --shots all --width 384  a still of every shot
+    engine\node.cmd engine\tools\film-render.mjs examples\demo\film\film.html examples\demo\out\clips --suffix -v01       one clip per VO line
+  data.js = shots and word times, direction.js = what happens in each shot, scenes.js = shots built from scratch.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demo film</title>
+</head>
+<body>
+<script>window.addEventListener('error', e => { window.filmError = window.filmError || `${e.message} (${e.filename}:${e.lineno})` })</script>
+<script src="../../../engine/tools/film/draw.js"></script>
+<script src="../../../engine/tools/film/live.js"></script>
+<script src="../../../engine/tools/film/film-kit.js"></script>
+<script src="data.js"></script>
+<script src="scenes.js"></script>
+<script src="direction.js"></script>
+<script>
+(() => {
+  // text has to be measured while the film is built
+  FilmDraw.pen.g = new OffscreenCanvas(16, 16).getContext('2d')
+  window.film = FilmKit.create({
+    data: window.FILM,
+    direction: window.FILM_DIRECTION,
+    scenes: window.FILM_SCENES,
+    media: './',
+    font: new URL('../../../engine/fonts/Poppins-Bold.ttf', location.href).href
+  })
+})()
+</script>
+</body>
+</html>

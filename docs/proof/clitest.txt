@@ -1,0 +1,139 @@
+kdp.ps1 end-to-end test, 2026-11-23 01:58, 739 s
+source: EE17DB523AB49F63D6E5E1BE39386CCEF78DE09CCCC05B53AD75C28161669EDA
+commands: add add-av archive backups bin-add bin-color bin-duplicate bin-effect bin-folder bin-info bin-reload bin-remove bin-rename bin-replace-file bin-set clean clear-history comp-add comp-info comp-list compositions comp-remove comp-set copy copy-to-sequence disable effect-add effect-clear effect-copy effect-info effect-list effect-remove effects effects-all effect-set effect-template effect-templates enable expand extract-audio folder fonts frame generator group guide-add guide-category guide-clear guide-export guide-list guide-remove guide-set info marker marker-list marker-remove marker-set mix move new otio-export otio-import playlist-clip presets preview profile-from-clip profiles profile-set proxy rebase redo relink remap remove render replace-in-timeline ripple-trim scene-split sequence-add sequences slideshow slip space-insert space-remove spaces-remove-all speed speed-job split stabilize sub-add subclip sub-export sub-import sub-state title title-save title-template title-text track-add track-clear track-remove track-set transcode trim undo ungroup unmix validate zone
+PASS 134  FAIL 0
+
+PASS  effects
+PASS  effect-info
+PASS  compositions
+PASS  comp-info
+PASS  profiles
+PASS  fonts
+PASS  presets
+PASS  effect-templates
+PASS  new
+PASS  new: refuses to overwrite
+PASS  bin-add: video, audio, image, animation
+PASS  bin-color
+PASS  title
+PASS  title-text
+PASS  bin-rename
+PASS  folder, bin-folder
+PASS  marker (-Category, -Dur)
+PASS  marker-list
+PASS  marker-set
+PASS  marker-remove
+PASS  subclip
+PASS  bin-set
+PASS  bin-info
+PASS  bin-duplicate
+PASS  bin-replace-file
+PASS  bin-reload
+PASS  relink
+PASS  generator
+PASS  slideshow (-FadeSlides)
+PASS  title-save, title-template
+PASS  bin-remove
+PASS  validate
+PASS  info
+PASS  clean
+PASS  add, -Insert, -Overwrite
+PASS  add: refuses overlap, bad track, decimal comma, too-long source
+PASS  copy
+PASS  move
+PASS  trim
+PASS  split
+PASS  remove, -Ripple
+PASS  slip
+PASS  ripple-trim
+PASS  speed (and back)
+PASS  speed: reverse
+PASS  remap
+PASS  disable, enable
+PASS  space-insert
+PASS  space-remove
+PASS  spaces-remove-all
+PASS  track-clear
+PASS  replace-in-timeline
+PASS  mix
+PASS  mix: ripple across a crossfade is refused
+PASS  unmix
+PASS  add-av
+PASS  linked: move
+PASS  linked: move from the audio half
+PASS  linked: trim
+PASS  linked: slip
+PASS  linked: ripple-trim
+PASS  linked: speed
+PASS  linked: split makes two pairs
+PASS  linked: space-insert keeps links
+PASS  linked: remove
+PASS  linked: -Alone
+PASS  ungroup
+PASS  group
+PASS  effect-add: clip, track, master
+PASS  effect-add: refuses audio effect on video, unknown id
+PASS  effect-add: defaults are raw MLT values, not divided by factor
+PASS  effect-add: an effect this build lacks is refused
+PASS  comp-add: a composition this build lacks is refused
+PASS  effect-list
+PASS  effect-set, renders
+PASS  effects-all
+PASS  effect-copy
+PASS  effect-remove
+PASS  effect-clear
+PASS  effect-template
+PASS  bin-effect
+PASS  comp-add, renders
+PASS  comp-list
+PASS  comp-set
+PASS  comp-remove
+PASS  track-add
+PASS  track-set
+PASS  track-remove
+PASS  guide-add (-Category)
+PASS  guide-list
+PASS  guide-set
+PASS  guide-export
+PASS  guide-category
+PASS  guide-remove, guide-clear
+PASS  sub-add
+PASS  undo restores subtitles too
+PASS  redo
+PASS  sub-import
+PASS  sub-export
+PASS  subtitles are visible in a render
+PASS  sub-state
+PASS  zone (-UseInEdits)
+PASS  proxy
+PASS  profile-set
+PASS  profile-from-clip
+PASS  clear-history
+PASS  backups
+PASS  sequence-add, -Sequence, nested clip renders
+PASS  sequences
+PASS  subtitles of a second sequence use their own file
+PASS  expand
+PASS  copy-to-sequence
+PASS  otio-export, otio-import
+PASS  playlist-clip
+PASS  archive
+PASS  extract-audio
+PASS  job results have short relative paths
+PASS  job results are never overwritten
+PASS  transcode
+PASS  transcode: a failing tool fails the command
+PASS  stabilize (vid.stab)
+PASS  speed-job
+PASS  scene-split: finds a known cut
+PASS  frame
+PASS  frame shows titles
+PASS  preview
+PASS  render (Kdenlive renderer)
+PASS  render -Preset
+PASS  render with subtitles
+PASS  a failed render is not passed off as the previous file
+PASS  moved folder: still works from the new place, media relative
+PASS  rebase
+PASS  moved folder: edit and render subtitles
+PASS  every command exercised (109)

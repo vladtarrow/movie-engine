@@ -1,0 +1,35 @@
+# Engine binaries: too large for git. Restore them from the official download (see AGENTS.md,
+# "Engine: Kdenlive"): engine/installer/kdenlive-26.08.3_standalone.exe unpacked into engine/Kdenlive/.
+/engine/Kdenlive/
+/engine/installer/
+# Kdenlive's settings, caches and proxies for this machine
+/engine/profile-kdenlive/
+# Node.js runtime that travels with the folder (too large for git, see AGENTS.md)
+/engine/node/
+# Node packages of engine/voice (restore with: npm install --prefix engine/voice, versions in package.json)
+node_modules/
+__pycache__/
+# Runtime files of the live-update watcher
+/engine/kd-watch.log
+/engine/kd-watch.run
+# Renders and screenshots (can be re-created from the projects)
+/out/
+/.shots/
+# Downloaded stock material (re-downloadable)
+/materials/download/
+# Undo/redo snapshots of kdp.ps1
+.kdp-history/
+# Temporary and backup files
+*.kdp-tmp
+*_backup[0-9]*.kdenlive
+
+# rendered overlays/clips; regenerate with engine/tools/kinetic-text.ps1, annotate.ps1, card-entrance.ps1
+materials/aigenerated/*/kinetic/
+materials/aigenerated/*/annotations/
+materials/aigenerated/*/cards/
+# rendered film: regenerate with engine/tools/film-render.mjs and film/build-timeline.py
+materials/aigenerated/*/film/clips/
+materials/aigenerated/*/film/ui-sounds/
+materials/aigenerated/*/opening/*.mp4
+# renders of the examples
+/examples/*/out/

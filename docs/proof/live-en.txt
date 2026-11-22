@@ -1,0 +1,28 @@
+live-update test, 2026-11-23 01:24
+PASS 13  FAIL 0
+
+PASS  test Kdenlive loads the project :: length=00:00:02:00
+PASS  AI edit appears in the open editor :: kdp exit 0 added 'red' to V1 at 2 s length=00:00:04:29
+PASS  watcher reports a confirmed reload :: confirmed=1
+PASS  two AI edits in a row both appear :: exit 0,0 added 'red' to V1 at 5 s added 'red' to V1 at 6 s length=00:00:06:29
+PASS  user edit makes the document modified :: 
+PASS  reload refuses while the user has unsaved edits :: exit 2 UNSAVED: the user has unsaved edits; nothing was reloaded
+PASS  AI command saves the user edit first and keeps it :: exit 0 added 'red' to V1 at 7 s folders 1 -> 2
+PASS  AI write right after a save still reloads :: length=00:00:08:29
+PASS  reading commands see unsaved user edits :: exit 0 folders 2 -> 3
+PASS  conflict: user edits stay, AI version is kept :: conflict logged=True copies=1 kdp exit 0
+PASS  pull saves and confirms :: exit 0 saved the user's edits to the project file
+PASS  manual reload is confirmed :: exit 0 reload confirmed in 4 s
+PASS  no Kdenlive: reload says so instead of success :: exit 3
+
+--- watcher log
+2026-11-23 01:22:40 watch start pid=14204 project=<sandbox>\livetest.kdenlive
+2026-11-23 01:22:53 AI change -> reload: exit 0 reload confirmed in 4 s
+2026-11-23 01:23:06 AI change -> reload: exit 0 reload confirmed in 4 s
+2026-11-23 01:23:12 AI change -> reload: exit 0 reload confirmed in 4 s (NOTE: Kdenlive changed the document while loading it)
+2026-11-23 01:23:18 kdenlive saved the project (user edits now on disk)
+2026-11-23 01:23:26 AI change -> reload: exit 0 reload confirmed in 4 s
+2026-11-23 01:23:37 kdenlive saved the project (user edits now on disk)
+2026-11-23 01:23:51 CONFLICT: file changed while Kdenlive has unsaved edits; not reloading. Copy kept: <sandbox>\.kdp-history\livetest\conflict\20261123-012351.kdenlive. Run kd-pull.ps1 and re-apply the change.
+2026-11-23 01:23:55 kdenlive saved the project (user edits now on disk)
+2026-11-23 01:24:06 watch stop

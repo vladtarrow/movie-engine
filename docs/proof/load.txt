@@ -1,0 +1,14 @@
+projects built by kdp-clitest.ps1 (then moved), opened in real Kdenlive 26.08.3, 2026-11-22 18:15
+PASS 11  FAIL 0
+
+PASS  bin loads clean
+PASS  fx loads clean
+PASS  jobs loads clean
+PASS  line loads clean
+PASS  linked loads clean
+PASS  mix loads clean
+PASS  notes loads clean
+PASS  otio-in loads clean
+PASS  otio loads clean
+PASS  out loads clean
+PASS  seq loads clean

@@ -1,0 +1,11 @@
+<kdenlivetitle width="1080" height="1920" out="59">
+ <item type="QGraphicsTextItem" z-index="1">
+  <position x="65" y="895">
+   <transform>1,0,0,0,1,0,0,0,1</transform>
+  </position>
+  <content font="Segoe UI" font-pixel-size="96" font-color="255,255,255,255" font-weight="700" font-italic="0" font-underline="0" font-outline-color="0,0,0,255" font-outline="0" letter-spacing="0" line-spacing="0" alignment="4" shadow="0;#64000000;3;3;3" kdenlive-axis-x-inverted="0" kdenlive-axis-y-inverted="0" box-width="950" box-height="130">Шаблон %s</content>
+ </item>
+ <startviewport rect="0,0,1080,1920"/>
+ <endviewport rect="0,0,1080,1920"/>
+ <background color="0,0,0,0"/>
+</kdenlivetitle>

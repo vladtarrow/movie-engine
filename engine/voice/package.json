@@ -1,0 +1,10 @@
+{
+  "name": "movie-engine-node-tools",
+  "private": true,
+  "description": "Node dependencies of engine/voice/voice.mjs (Edge TTS) and the headless-Edge renderers in engine/tools (ws).",
+  "type": "module",
+  "dependencies": {
+    "msedge-tts": "2.1.0",
+    "ws": "8.21.0"
+  }
+}
