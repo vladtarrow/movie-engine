@@ -409,4 +409,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-livetest.ps1
 
 ## Лицензия
 
-Лицензия для собственного кода movie-engine пока не выбрана. Пока не добавлен файл `LICENSE`, все права принадлежат авторам. Kdenlive, MLT, FFmpeg, пакеты Node.js и шрифт Poppins распространяются под своими лицензиями.
+Собственный код movie-engine распространяется под [лицензией MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, пакеты Node.js и шрифт Poppins распространяются под своими лицензиями.

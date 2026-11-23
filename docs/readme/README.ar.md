@@ -411,6 +411,6 @@ powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-livetest.ps1
 
 ## الترخيص
 
-لم يُختر بعد ترخيص الكود الخاص بـ movie-engine. وإلى أن يُضاف ملف `LICENSE`، تبقى جميع الحقوق محفوظة للمؤلفين. يحتفظ Kdenlive وMLT وFFmpeg وحزم Node.js وخط Poppins بتراخيصها الخاصة.
+يُنشر الكود الخاص بـ movie-engine بموجب [ترخيص MIT](../../LICENSE). يحتفظ Kdenlive وMLT وFFmpeg وحزم Node.js وخط Poppins بتراخيصها الخاصة.
 
 </div>

@@ -409,4 +409,4 @@ Windows에는 관리되면서도 안전한 포크가 없습니다(2026-11 조사
 
 ## 라이선스
 
-movie-engine 자체 코드의 라이선스는 아직 정해지지 않았습니다. `LICENSE` 파일이 추가되기 전까지 모든 권리는 저작자에게 있습니다. Kdenlive, MLT, FFmpeg, Node.js 패키지, Poppins 글꼴은 각자의 라이선스를 따릅니다.
+movie-engine 자체 코드는 [MIT 라이선스](../../LICENSE)로 배포됩니다. Kdenlive, MLT, FFmpeg, Node.js 패키지, Poppins 글꼴은 각자의 라이선스를 따릅니다.

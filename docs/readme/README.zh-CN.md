@@ -409,4 +409,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-livetest.ps1
 
 ## 许可证
 
-movie-engine 自身代码的许可证尚未确定。在添加 `LICENSE` 文件之前，作者保留所有权利。Kdenlive、MLT、FFmpeg、Node.js 依赖包和 Poppins 字体各自保留其原有许可证。
+movie-engine 自身代码采用 [MIT 许可证](../../LICENSE)发布。Kdenlive、MLT、FFmpeg、Node.js 依赖包和 Poppins 字体各自保留其原有许可证。

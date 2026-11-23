@@ -409,4 +409,4 @@ Les contributions sont les bienvenues. Voir [CONTRIBUTING.md](../../CONTRIBUTING
 
 ## Licence
 
-La licence du code propre à movie-engine n'a pas encore été choisie. Tant qu'aucun fichier `LICENSE` n'a été ajouté, tous les droits sont réservés aux auteurs. Kdenlive, MLT, FFmpeg, les paquets Node.js et la police Poppins conservent leurs propres licences.
+Le code propre à movie-engine est publié sous [licence MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, les paquets Node.js et la police Poppins conservent leurs propres licences.

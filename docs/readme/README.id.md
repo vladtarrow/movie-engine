@@ -409,4 +409,4 @@ Kontribusi sangat diterima. Lihat [CONTRIBUTING.md](../../CONTRIBUTING.md). Sing
 
 ## Lisensi
 
-Lisensi untuk kode milik movie-engine sendiri belum dipilih. Sampai file `LICENSE` ditambahkan, semua hak dilindungi oleh para penulisnya. Kdenlive, MLT, FFmpeg, paket Node.js, dan font Poppins tetap memakai lisensinya masing-masing.
+Kode milik movie-engine sendiri dirilis di bawah [Lisensi MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, paket Node.js, dan font Poppins tetap memakai lisensinya masing-masing.

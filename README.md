@@ -407,4 +407,4 @@ Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 
 ## License
 
-The license for movie-engine's own code has not been chosen yet. Until a `LICENSE` file is added, all rights are reserved by the authors. Kdenlive, MLT, FFmpeg, Node.js packages and the Poppins font keep their own licenses.
+movie-engine's own code is released under the [MIT License](LICENSE). Kdenlive, MLT, FFmpeg, Node.js packages and the Poppins font keep their own licenses.

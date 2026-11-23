@@ -409,4 +409,4 @@ Katkılarınızı bekliyoruz. Bkz. [CONTRIBUTING.md](../../CONTRIBUTING.md). Kı
 
 ## Lisans
 
-movie-engine'in kendi kodu için lisans henüz seçilmedi. Bir `LICENSE` dosyası eklenene kadar tüm hakları yazarlarına aittir. Kdenlive, MLT, FFmpeg, Node.js paketleri ve Poppins yazı tipi kendi lisanslarını korur.
+movie-engine'in kendi kodu [MIT Lisansı](../../LICENSE) ile yayımlanmaktadır. Kdenlive, MLT, FFmpeg, Node.js paketleri ve Poppins yazı tipi kendi lisanslarını korur.

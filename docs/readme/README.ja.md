@@ -409,4 +409,4 @@ Windows では、メンテナンスされていて安全なフォークが存在
 
 ## ライセンス
 
-movie-engine 自体のコードのライセンスはまだ決まっていません。`LICENSE` ファイルが追加されるまで、すべての権利は作者に帰属します。Kdenlive、MLT、FFmpeg、Node.js パッケージ、Poppins フォントは、それぞれ独自のライセンスに従います。
+movie-engine 自体のコードは [MIT ライセンス](../../LICENSE)で公開されています。Kdenlive、MLT、FFmpeg、Node.js パッケージ、Poppins フォントは、それぞれ独自のライセンスに従います。
