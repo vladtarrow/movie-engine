@@ -92,7 +92,7 @@ flowchart LR
 |---|---|
 | ОС | Windows 10 или 11, x64 |
 | Редактор | Kdenlive **26.08.3**, портативная сборка (standalone). Другие версии не проверялись. |
-| Node.js | 18 или новее, просто файл `node.exe`, скопированный в `engine/node/` |
+| Node.js | 18 или новее: `.zip` для Windows x64 с nodejs.org, распакованный в `engine/node/` |
 | Браузер | Microsoft Edge (входит в Windows); рендереры сцен используют его в headless-режиме |
 | Агент | [Claude Code](https://claude.com/claude-code) или Codex. Не обязательно: каждый инструмент можно запустить и вручную. |
 | Диск | около 1 ГБ на редактор и инструменты плюс ваши медиафайлы |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** Скопируйте `node.exe` (18 или новее) в `engine\node\`. Установщик не нужен, достаточно одного exe. Все скрипты запускаются через `engine\node.cmd`, никогда не через системный Node.
+**1. Node.js.** Скачайте `.zip` для Windows x64 с Node.js 18 или новее с <https://nodejs.org/en/download> и распакуйте его содержимое в `engine\node\`, чтобы там оказались `engine\node\node.exe` и `engine\node\npm.cmd`. Ни установщик, ни системный Node не нужны. Все скрипты запускаются через `engine\node.cmd`, никогда не через системный Node.
 
 **2. Пакеты Node** для инструмента озвучки и рендереров (версии зафиксированы в `engine/voice/package.json`):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Портативный Kdenlive 26.08.3.** Скачайте `kdenlive-26.08.3_standalone.exe` с <https://download.kde.org/stable/kdenlive/26.08/windows/> в `engine\installer\`, проверьте и распакуйте:
@@ -406,6 +406,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-livetest.ps1
 - [FFmpeg](https://ffmpeg.org), поставляется вместе с Kdenlive.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts) для озвучки.
 - [Poppins](https://fonts.google.com/specimen/Poppins) от Indian Type Foundry, SIL Open Font License (`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: файл меню Kdenlive, взят из исходного кода Kdenlive 26.08.3; используется только проверкой покрытия. Остаётся под лицензией GPL Kdenlive, а не под MIT.
 
 ## Лицензия
 

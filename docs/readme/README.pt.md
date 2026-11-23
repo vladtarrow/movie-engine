@@ -92,7 +92,7 @@ Todo comando de edição segue o mesmo ciclo seguro:
 |---|---|
 | Sistema operacional | Windows 10 ou 11, x64 |
 | Editor | Build portátil (standalone) do Kdenlive **26.08.3**. Outras versões não foram testadas. |
-| Node.js | 18 ou mais recente, como um simples `node.exe` copiado para `engine/node/` |
+| Node.js | 18 ou mais recente: o `.zip` para Windows x64 do nodejs.org, descompactado em `engine/node/` |
 | Navegador | Microsoft Edge (parte do Windows); usado em modo headless pelos renderizadores de cena |
 | Agente | [Claude Code](https://claude.com/claude-code) ou Codex. Opcional: todas as ferramentas também podem ser executadas à mão. |
 | Disco | cerca de 1 GB para o editor e as ferramentas, mais a sua mídia |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** Copie o `node.exe` (18 ou mais recente) para `engine\node\`. O instalador não é necessário: o exe sozinho basta. Todos os scripts rodam por meio de `engine\node.cmd`, nunca por um Node do sistema.
+**1. Node.js.** Baixe o `.zip` para Windows x64 do Node.js 18 ou mais recente em <https://nodejs.org/en/download> e descompacte o conteúdo em `engine\node\`, de modo que `engine\node\node.exe` e `engine\node\npm.cmd` fiquem lá. Não é preciso instalador nem Node do sistema. Todos os scripts rodam por meio de `engine\node.cmd`, nunca por um Node do sistema.
 
 **2. Pacotes do Node** para a ferramenta de voz e os renderizadores (as versões estão fixadas em `engine/voice/package.json`):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 portátil.** Baixe `kdenlive-26.08.3_standalone.exe` de <https://download.kde.org/stable/kdenlive/26.08/windows/> para `engine\installer\`, verifique-o e descompacte-o:
@@ -406,6 +406,7 @@ Contribuições são bem-vindas. Veja [CONTRIBUTING.md](../../CONTRIBUTING.md). 
 - [FFmpeg](https://ffmpeg.org), que vem com o Kdenlive.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts), para a narração.
 - [Poppins](https://fonts.google.com/specimen/Poppins), da Indian Type Foundry, SIL Open Font License (`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: o arquivo de menus do Kdenlive, tirado do código-fonte do Kdenlive 26.08.3; usado só pela verificação de cobertura. Continua sob a licença GPL do Kdenlive, não sob a Licença MIT.
 
 ## Licença
 

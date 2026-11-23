@@ -92,7 +92,7 @@ flowchart LR
 |---|---|
 | 操作系统 | Windows 10 或 11，x64 |
 | 编辑器 | Kdenlive **26.08.3** 便携版（standalone）。其他版本未经测试。 |
-| Node.js | 18 或更高版本，只需把 `node.exe` 复制到 `engine/node/` |
+| Node.js | 18 或更高版本：从 nodejs.org 下载 Windows x64 `.zip`，解压到 `engine/node/` |
 | 浏览器 | Microsoft Edge（Windows 自带）；场景渲染器以无头模式使用它 |
 | 智能体 | [Claude Code](https://claude.com/claude-code) 或 Codex。可选：所有工具也都可以手动运行。 |
 | 磁盘 | 编辑器和工具约占 1 GB，另加你的媒体文件 |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js。** 把 `node.exe`（18 或更高版本）复制到 `engine\node\`。不需要安装程序：只要这个 exe 就够了。所有脚本都通过 `engine\node.cmd` 运行，从不使用系统中的 Node。
+**1. Node.js。** 从 <https://nodejs.org/en/download> 下载 Node.js 18 或更高版本的 Windows x64 `.zip`，把其中的内容解压到 `engine\node\`，使 `engine\node\node.exe` 和 `engine\node\npm.cmd` 都在那里。不需要安装程序，也不需要系统中的 Node。所有脚本都通过 `engine\node.cmd` 运行，从不使用系统中的 Node。
 
 **2. Node 依赖包**，供配音工具和渲染器使用（版本固定在 `engine/voice/package.json` 中）：
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 便携版。** 从 <https://download.kde.org/stable/kdenlive/26.08/windows/> 下载 `kdenlive-26.08.3_standalone.exe` 到 `engine\installer\`，校验后解压：
@@ -406,6 +406,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-livetest.ps1
 - [FFmpeg](https://ffmpeg.org)，随 Kdenlive 一同提供。
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts)，用于配音。
 - [Poppins](https://fonts.google.com/specimen/Poppins)，由 Indian Type Foundry 设计，采用 SIL Open Font License（`engine/fonts/OFL.txt`）。
+- `engine/tools/data/kdenliveui-26.08.3.rc`：Kdenlive 的菜单文件，取自 Kdenlive 26.08.3 源代码，仅供覆盖检查使用。它仍采用 Kdenlive 的 GPL 许可证，而非 MIT 许可证。
 
 ## 许可证
 

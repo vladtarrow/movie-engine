@@ -45,8 +45,8 @@ An AI-driven video production setup on top of the Kdenlive editor. The AI builds
 ### Not in git (see `.gitignore`)
 
 `engine/Kdenlive/`, `engine/installer/`, `engine/profile-kdenlive/`, `engine/node/`, `node_modules/`, `out/`, `.shots/`, `materials/download/`. On a fresh clone (ask the user before downloading):
-1. Put a Node.js 18+ `node.exe` into `engine/node/` (a plain copy of the exe is enough).
-2. `npm install --prefix engine/voice` (versions pinned in `engine/voice/package.json`).
+1. Unpack the Windows x64 `.zip` of Node.js 18+ from `https://nodejs.org/en/download` into `engine/node/`, so that `engine\node\node.exe` and `engine\node\npm.cmd` are there. A bare `node.exe` runs the scripts but has no npm for step 2.
+2. `engine\node\npm.cmd install --prefix engine\voice` (versions pinned in `engine/voice/package.json`).
 3. Download `kdenlive-26.08.3_standalone.exe` from `https://download.kde.org/stable/kdenlive/26.08/windows/` into `engine/installer/`, check its SHA-256 (above), unpack with `engine\installer\kdenlive-26.08.3_standalone.exe -o"engine\Kdenlive" -y` (7-Zip self-extractor, no admin).
 
 ### Before committing: no machine paths

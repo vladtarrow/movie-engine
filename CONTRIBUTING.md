@@ -12,7 +12,7 @@ Thank you for helping. This project lets AI agents edit Kdenlive projects while 
 
 ## Development setup
 
-Follow the installation steps in [README.md](README.md#installation). You need Windows 10/11, the portable Kdenlive 26.08.3 in `engine/Kdenlive/`, `node.exe` in `engine/node/`, and `npm install --prefix engine/voice`.
+Follow the installation steps in [README.md](README.md#installation). You need Windows 10/11, the portable Kdenlive 26.08.3 in `engine/Kdenlive/`, Node.js (the Windows x64 `.zip`) unpacked into `engine/node/`, and `engine\node\npm.cmd install --prefix engine\voice`.
 
 PowerShell scripts target **Windows PowerShell 5.1**:
 

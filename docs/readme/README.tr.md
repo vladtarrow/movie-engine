@@ -92,7 +92,7 @@ Her düzenleme komutu aynı güvenli döngüyü izler:
 |---|---|
 | İşletim sistemi | Windows 10 veya 11, x64 |
 | Düzenleyici | Kdenlive **26.08.3** taşınabilir (standalone) sürüm. Diğer sürümler test edilmedi. |
-| Node.js | 18 veya üzeri, `engine/node/` içine kopyalanmış düz bir `node.exe` olarak |
+| Node.js | 18 veya üzeri: nodejs.org'dan Windows x64 `.zip`, `engine/node/` içine açılmış |
 | Tarayıcı | Microsoft Edge (Windows'un parçası); sahne işleyicileri tarafından headless (arayüzsüz) kullanılır |
 | Ajan | [Claude Code](https://claude.com/claude-code) veya Codex. İsteğe bağlı: her araç elle de çalıştırılabilir. |
 | Disk | düzenleyici ve araçlar için yaklaşık 1 GB, artı medya dosyalarınız |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** `node.exe`'yi (18 veya üzeri) `engine\node\` içine kopyalayın. Yükleyiciye gerek yoktur: exe dosyası tek başına yeterlidir. Tüm betikler sistemdeki Node ile değil, her zaman `engine\node.cmd` üzerinden çalışır.
+**1. Node.js.** Node.js 18 veya üzerinin Windows x64 `.zip` dosyasını <https://nodejs.org/en/download> adresinden indirin ve içeriğini `engine\node\` içine açın; böylece `engine\node\node.exe` ve `engine\node\npm.cmd` orada olur. Yükleyiciye de sistemdeki Node'a da gerek yoktur. Tüm betikler sistemdeki Node ile değil, her zaman `engine\node.cmd` üzerinden çalışır.
 
 **2. Node paketleri**, ses aracı ve işleyiciler için (sürümler `engine/voice/package.json` içinde sabitlenmiştir):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 taşınabilir.** `kdenlive-26.08.3_standalone.exe` dosyasını <https://download.kde.org/stable/kdenlive/26.08/windows/> adresinden `engine\installer\` içine indirin, doğrulayın ve açın:
@@ -406,6 +406,7 @@ Katkılarınızı bekliyoruz. Bkz. [CONTRIBUTING.md](../../CONTRIBUTING.md). Kı
 - [FFmpeg](https://ffmpeg.org), Kdenlive ile birlikte gelir.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts), seslendirme için.
 - Indian Type Foundry'nin [Poppins](https://fonts.google.com/specimen/Poppins) yazı tipi, SIL Open Font License (`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: Kdenlive'ın menü dosyası, Kdenlive 26.08.3 kaynak kodundan alındı; yalnızca kapsam denetimi kullanır. MIT Lisansı'na değil, Kdenlive'ın GPL lisansına tabidir.
 
 ## Lisans
 

@@ -92,7 +92,7 @@ flowchart LR
 |---|---|
 | OS | Windows 10 または 11、x64 |
 | エディター | Kdenlive **26.08.3** ポータブル（standalone）版。他のバージョンは未テストです。 |
-| Node.js | 18 以降。`node.exe` を `engine/node/` にコピーするだけ |
+| Node.js | 18 以降。nodejs.org の Windows x64 用 `.zip` を `engine/node/` に展開 |
 | ブラウザー | Microsoft Edge（Windows に付属）。シーンレンダラーがヘッドレスで使用します |
 | エージェント | [Claude Code](https://claude.com/claude-code) または Codex。任意です。すべてのツールは手動でも実行できます。 |
 | ディスク | エディターとツールで約 1 GB、加えてあなたのメディア |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js。** `node.exe`（18 以降）を `engine\node\` にコピーします。インストーラーは不要で、exe 単体で十分です。すべてのスクリプトは `engine\node.cmd` を通じて実行され、システムの Node は決して使いません。
+**1. Node.js。** <https://nodejs.org/en/download> から Node.js 18 以降の Windows x64 用 `.zip` をダウンロードし、中身を `engine\node\` に展開して `engine\node\node.exe` と `engine\node\npm.cmd` がある状態にします。インストーラーもシステムの Node も不要です。すべてのスクリプトは `engine\node.cmd` を通じて実行され、システムの Node は決して使いません。
 
 **2. Node パッケージ**（ナレーションツールとレンダラー用。バージョンは `engine/voice/package.json` で固定されています）:
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 ポータブル版。** <https://download.kde.org/stable/kdenlive/26.08/windows/> から `kdenlive-26.08.3_standalone.exe` を `engine\installer\` にダウンロードし、検証してから展開します。
@@ -406,6 +406,7 @@ Windows では、メンテナンスされていて安全なフォークが存在
 - [FFmpeg](https://ffmpeg.org): Kdenlive に同梱。
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts): ナレーションに使用。
 - [Poppins](https://fonts.google.com/specimen/Poppins): Indian Type Foundry 制作、SIL Open Font License（`engine/fonts/OFL.txt`）。
+- `engine/tools/data/kdenliveui-26.08.3.rc`: Kdenlive のメニュー定義ファイル。Kdenlive 26.08.3 のソースから取得し、カバレッジ検査だけで使用。MIT ライセンスではなく、Kdenlive の GPL ライセンスに従います。
 
 ## ライセンス
 

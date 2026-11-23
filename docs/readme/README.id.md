@@ -92,7 +92,7 @@ Setiap perintah penyuntingan mengikuti siklus aman yang sama:
 |---|---|
 | OS | Windows 10 atau 11, x64 |
 | Editor | Build portabel (standalone) Kdenlive **26.08.3**. Versi lain belum diuji. |
-| Node.js | 18 atau lebih baru, berupa `node.exe` biasa yang disalin ke `engine/node/` |
+| Node.js | 18 atau lebih baru: `.zip` Windows x64 dari nodejs.org, diekstrak ke `engine/node/` |
 | Browser | Microsoft Edge (bawaan Windows); dipakai secara headless oleh renderer adegan |
 | Agen | [Claude Code](https://claude.com/claude-code) atau Codex. Opsional: setiap tool juga bisa dijalankan manual. |
 | Disk | sekitar 1 GB untuk editor dan tool, ditambah media Anda |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** Salin `node.exe` (18 atau lebih baru) ke `engine\node\`. Installer tidak diperlukan: file exe saja sudah cukup. Semua skrip dijalankan melalui `engine\node.cmd`, tidak pernah melalui Node milik sistem.
+**1. Node.js.** Unduh `.zip` Windows x64 Node.js 18 atau lebih baru dari <https://nodejs.org/en/download> dan ekstrak isinya ke `engine\node\`, sehingga `engine\node\node.exe` dan `engine\node\npm.cmd` ada di sana. Installer maupun Node milik sistem tidak diperlukan. Semua skrip dijalankan melalui `engine\node.cmd`, tidak pernah melalui Node milik sistem.
 
 **2. Paket Node** untuk tool suara dan renderer (versinya dikunci di `engine/voice/package.json`):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 portabel.** Unduh `kdenlive-26.08.3_standalone.exe` dari <https://download.kde.org/stable/kdenlive/26.08/windows/> ke `engine\installer\`, periksa, lalu ekstrak:
@@ -406,6 +406,7 @@ Kontribusi sangat diterima. Lihat [CONTRIBUTING.md](../../CONTRIBUTING.md). Sing
 - [FFmpeg](https://ffmpeg.org), disertakan bersama Kdenlive.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts) untuk sulih suara.
 - [Poppins](https://fonts.google.com/specimen/Poppins) oleh Indian Type Foundry, SIL Open Font License (`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: berkas menu Kdenlive, diambil dari kode sumber Kdenlive 26.08.3; hanya dipakai oleh pemeriksaan cakupan. Berkas ini tetap di bawah lisensi GPL Kdenlive, bukan Lisensi MIT.
 
 ## Lisensi
 

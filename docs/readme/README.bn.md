@@ -92,7 +92,7 @@ flowchart LR
 |---|---|
 | OS | Windows 10 বা 11, x64 |
 | এডিটর | Kdenlive **26.08.3** পোর্টেবল (standalone) বিল্ড। অন্য সংস্করণ পরীক্ষা করা হয়নি। |
-| Node.js | 18 বা নতুন, একটি সাধারণ `node.exe` যা `engine/node/`-এ কপি করা |
+| Node.js | 18 বা নতুন: nodejs.org থেকে Windows x64 `.zip`, `engine/node/`-এ আনপ্যাক করা |
 | ব্রাউজার | Microsoft Edge (Windows-এর অংশ); সিন রেন্ডারার এটিকে headless মোডে ব্যবহার করে |
 | এজেন্ট | [Claude Code](https://claude.com/claude-code) বা Codex। ঐচ্ছিক: প্রতিটি টুল হাতেও চালানো যায়। |
 | ডিস্ক | এডিটর ও টুলের জন্য প্রায় 1 GB, সঙ্গে আপনার মিডিয়া |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** `node.exe` (18 বা নতুন) `engine\node\`-এ কপি করুন। ইনস্টলারের দরকার নেই: শুধু exe-টাই যথেষ্ট। সব স্ক্রিপ্ট চলে `engine\node.cmd` দিয়ে, কখনো সিস্টেমের Node দিয়ে নয়।
+**1. Node.js.** <https://nodejs.org/en/download> থেকে Node.js 18 বা নতুনের Windows x64 `.zip` ডাউনলোড করে তার ভেতরের সবকিছু `engine\node\`-এ আনপ্যাক করুন, যাতে `engine\node\node.exe` এবং `engine\node\npm.cmd` থাকে। ইনস্টলার বা সিস্টেমের Node লাগে না। সব স্ক্রিপ্ট চলে `engine\node.cmd` দিয়ে, কখনো সিস্টেমের Node দিয়ে নয়।
 
 **2. Node প্যাকেজ**, ভয়েস টুল ও রেন্ডারারের জন্য (সংস্করণগুলো `engine/voice/package.json`-এ নির্দিষ্ট করা আছে):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 পোর্টেবল।** <https://download.kde.org/stable/kdenlive/26.08/windows/> থেকে `kdenlive-26.08.3_standalone.exe` ডাউনলোড করে `engine\installer\`-এ রাখুন, যাচাই করুন এবং আনপ্যাক করুন:
@@ -406,6 +406,7 @@ Windows-এ রক্ষণাবেক্ষণ করা ও নিরাপ�
 - [FFmpeg](https://ffmpeg.org), যা Kdenlive-এর সঙ্গে আসে।
 - ভয়েস-ওভারের জন্য [msedge-tts](https://www.npmjs.com/package/msedge-tts)।
 - Indian Type Foundry-র [Poppins](https://fonts.google.com/specimen/Poppins), SIL Open Font License (`engine/fonts/OFL.txt`)।
+- `engine/tools/data/kdenliveui-26.08.3.rc`: Kdenlive-এর মেনু ফাইল, Kdenlive 26.08.3-এর সোর্স থেকে নেওয়া; শুধু কভারেজ চেকে ব্যবহৃত। এটি MIT নয়, Kdenlive-এর GPL লাইসেন্সের অধীনে থাকে।
 
 ## লাইসেন্স
 

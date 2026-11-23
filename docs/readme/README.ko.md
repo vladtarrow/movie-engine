@@ -92,7 +92,7 @@ flowchart LR
 |---|---|
 | OS | Windows 10 또는 11, x64 |
 | 편집기 | Kdenlive **26.08.3** 포터블(standalone) 빌드. 다른 버전은 테스트되지 않았습니다. |
-| Node.js | 18 이상. `node.exe` 파일만 `engine/node/`에 복사하면 됩니다 |
+| Node.js | 18 이상. nodejs.org의 Windows x64 `.zip`을 `engine/node/`에 압축 해제 |
 | 브라우저 | Microsoft Edge(Windows 기본 포함). 장면 렌더러가 헤드리스 모드로 사용합니다 |
 | 에이전트 | [Claude Code](https://claude.com/claude-code) 또는 Codex. 선택 사항이며, 모든 도구는 직접 실행할 수도 있습니다. |
 | 디스크 | 편집기와 도구에 약 1 GB, 여기에 미디어 용량 추가 |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** `node.exe`(18 이상)를 `engine\node\`에 복사합니다. 설치 프로그램은 필요 없고 exe 파일 하나면 충분합니다. 모든 스크립트는 `engine\node.cmd`를 통해 실행되며, 시스템에 설치된 Node는 절대 사용하지 않습니다.
+**1. Node.js.** <https://nodejs.org/en/download>에서 Node.js 18 이상의 Windows x64 `.zip`을 내려받아 내용을 `engine\node\`에 압축 해제합니다. 그러면 `engine\node\node.exe`와 `engine\node\npm.cmd`가 생깁니다. 설치 프로그램도 시스템 Node도 필요 없습니다. 모든 스크립트는 `engine\node.cmd`를 통해 실행되며, 시스템에 설치된 Node는 절대 사용하지 않습니다.
 
 **2. Node 패키지**(내레이션 도구와 렌더러용, 버전은 `engine/voice/package.json`에 고정되어 있음):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 포터블.** <https://download.kde.org/stable/kdenlive/26.08/windows/>에서 `kdenlive-26.08.3_standalone.exe`를 `engine\installer\`로 내려받아 검증한 뒤 압축을 풉니다.
@@ -406,6 +406,7 @@ Windows에는 관리되면서도 안전한 포크가 없습니다(2026-11 조사
 - [FFmpeg](https://ffmpeg.org): Kdenlive에 함께 포함됨.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts): 내레이션에 사용.
 - [Poppins](https://fonts.google.com/specimen/Poppins): Indian Type Foundry 제작, SIL Open Font License(`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: Kdenlive 메뉴 파일로, Kdenlive 26.08.3 소스에서 가져왔으며 커버리지 검사에만 쓰입니다. MIT 라이선스가 아니라 Kdenlive의 GPL 라이선스를 따릅니다.
 
 ## 라이선스
 

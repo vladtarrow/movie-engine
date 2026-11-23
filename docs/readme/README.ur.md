@@ -94,7 +94,7 @@ flowchart LR
 |---|---|
 | OS | Windows 10 یا 11، x64 |
 | ایڈیٹر | Kdenlive **26.08.3** پورٹیبل (standalone) بلڈ۔ دوسرے ورژن ٹیسٹ نہیں کیے گئے۔ |
-| Node.js | 18 یا نیا، ایک سادہ `node.exe` جو `engine/node/` میں کاپی کیا گیا ہو |
+| Node.js | 18 یا نیا: nodejs.org سے Windows x64 کی `.zip`، جو `engine/node/` میں ان زپ کی گئی ہو |
 | براؤزر | Microsoft Edge (Windows کا حصہ)؛ سین رینڈررز اسے headless موڈ میں استعمال کرتے ہیں |
 | ایجنٹ | [Claude Code](https://claude.com/claude-code) یا Codex۔ اختیاری: ہر ٹول ہاتھ سے بھی چلتا ہے۔ |
 | ڈسک | ایڈیٹر اور ٹولز کے لیے تقریباً 1 GB، ساتھ میں آپ کا میڈیا |
@@ -109,12 +109,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** `node.exe` (18 یا نیا) کو `engine\node\` میں کاپی کریں۔ انسٹالر کی ضرورت نہیں: صرف exe کافی ہے۔ تمام اسکرپٹس `engine\node.cmd` کے ذریعے چلتی ہیں، کبھی سسٹم کے Node سے نہیں۔
+**1. Node.js.** <https://nodejs.org/en/download> سے Node.js 18 یا نئے کی Windows x64 `.zip` ڈاؤن لوڈ کریں اور اس کا مواد `engine\node\` میں ان زپ کریں، تاکہ وہاں `engine\node\node.exe` اور `engine\node\npm.cmd` موجود ہوں۔ نہ انسٹالر چاہیے، نہ سسٹم کا Node۔ تمام اسکرپٹس `engine\node.cmd` کے ذریعے چلتی ہیں، کبھی سسٹم کے Node سے نہیں۔
 
 **2. Node پیکجز**، وائس ٹول اور رینڈررز کے لیے (ورژن `engine/voice/package.json` میں طے ہیں):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 پورٹیبل۔** <https://download.kde.org/stable/kdenlive/26.08/windows/> سے `kdenlive-26.08.3_standalone.exe` کو `engine\installer\` میں ڈاؤن لوڈ کریں، اسے چیک کریں اور ان پیک کریں:
@@ -408,6 +408,7 @@ Windows پر کوئی مینٹین شدہ اور محفوظ فورک موجود 
 - [FFmpeg](https://ffmpeg.org)، جو Kdenlive کے ساتھ آتا ہے۔
 - وائس اوور کے لیے [msedge-tts](https://www.npmjs.com/package/msedge-tts)۔
 - Indian Type Foundry کا [Poppins](https://fonts.google.com/specimen/Poppins)، SIL Open Font License (`engine/fonts/OFL.txt`)۔
+- `engine/tools/data/kdenliveui-26.08.3.rc`: Kdenlive کی مینو فائل، Kdenlive 26.08.3 کے سورس کوڈ سے لی گئی؛ صرف کوریج چیک میں استعمال ہوتی ہے۔ یہ MIT کے بجائے Kdenlive کے GPL لائسنس کے تحت رہتی ہے۔
 
 ## لائسنس
 

@@ -94,7 +94,7 @@ flowchart LR
 |---|---|
 | نظام التشغيل | Windows 10 أو 11، x64 |
 | المحرر | إصدار Kdenlive **26.08.3** المحمول (standalone). الإصدارات الأخرى غير مُختبرة. |
-| Node.js | الإصدار 18 أو أحدث، كملف `node.exe` عادي منسوخ إلى `engine/node/` |
+| Node.js | الإصدار 18 أو أحدث: ملف `.zip` لنظام Windows x64 من nodejs.org، مفكوك في `engine/node/` |
 | المتصفح | Microsoft Edge (جزء من Windows)؛ تستخدمه أدوات تصيير المشاهد دون واجهة (headless) |
 | الوكيل | [Claude Code](https://claude.com/claude-code) أو Codex. اختياري: كل أداة تعمل يدويًا أيضًا. |
 | القرص | نحو 1 GB للمحرر والأدوات، إضافةً إلى ملفات الوسائط الخاصة بك |
@@ -109,12 +109,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** انسخ `node.exe` (الإصدار 18 أو أحدث) إلى `engine\node\`. لا حاجة إلى المثبّت: الملف التنفيذي وحده يكفي. تعمل جميع السكربتات عبر `engine\node.cmd`، وليس عبر Node المثبّت في النظام أبدًا.
+**1. Node.js.** نزّل ملف `.zip` لنظام Windows x64 من Node.js الإصدار 18 أو أحدث من <https://nodejs.org/en/download> وفُكّ محتواه في `engine\node\`، بحيث يوجد `engine\node\node.exe` و`engine\node\npm.cmd`. لا حاجة إلى المثبّت ولا إلى Node مثبّت في النظام. تعمل جميع السكربتات عبر `engine\node.cmd`، وليس عبر Node المثبّت في النظام أبدًا.
 
 **2. حزم Node** لأداة الصوت وأدوات التصيير (الإصدارات مثبّتة في `engine/voice/package.json`):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 المحمول.** نزّل `kdenlive-26.08.3_standalone.exe` من <https://download.kde.org/stable/kdenlive/26.08/windows/> إلى `engine\installer\`، وتحقق منه ثم فكّ ضغطه:
@@ -408,6 +408,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-livetest.ps1
 - [FFmpeg](https://ffmpeg.org)، المرفق مع Kdenlive.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts) للتعليق الصوتي.
 - [Poppins](https://fonts.google.com/specimen/Poppins) من Indian Type Foundry، بترخيص SIL Open Font License (`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: ملف قوائم Kdenlive، مأخوذ من الكود المصدري لـ Kdenlive 26.08.3، ويُستخدم فقط في فحص التغطية. يبقى تحت ترخيص GPL الخاص بـ Kdenlive، وليس تحت ترخيص MIT.
 
 ## الترخيص
 

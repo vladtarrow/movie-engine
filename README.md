@@ -90,7 +90,7 @@ Every editing command follows the same safe cycle:
 |---|---|
 | OS | Windows 10 or 11, x64 |
 | Editor | Kdenlive **26.08.3** portable (standalone) build. Other versions are untested. |
-| Node.js | 18 or newer, as a plain `node.exe` copied into `engine/node/` |
+| Node.js | 18 or newer: the Windows x64 `.zip` from nodejs.org, unpacked into `engine/node/` |
 | Browser | Microsoft Edge (part of Windows); used headless by the scene renderers |
 | Agent | [Claude Code](https://claude.com/claude-code) or Codex. Optional: every tool also runs by hand. |
 | Disk | about 1 GB for the editor and tools, plus your media |
@@ -105,12 +105,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** Copy `node.exe` (18 or newer) into `engine\node\`. The installer is not needed: the exe alone is enough. All scripts run through `engine\node.cmd`, never through a system Node.
+**1. Node.js.** Download the Windows x64 `.zip` of Node.js 18 or newer from <https://nodejs.org/en/download> and unpack its contents into `engine\node\`, so that `engine\node\node.exe` and `engine\node\npm.cmd` are there. No installer and no system Node are needed. All scripts run through `engine\node.cmd`, never through a system Node.
 
 **2. Node packages** for the voice tool and the renderers (versions are pinned in `engine/voice/package.json`):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 portable.** Download `kdenlive-26.08.3_standalone.exe` from <https://download.kde.org/stable/kdenlive/26.08/windows/> into `engine\installer\`, check it and unpack it:
@@ -404,6 +404,7 @@ Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 - [FFmpeg](https://ffmpeg.org), bundled with Kdenlive.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts) for the voice-over.
 - [Poppins](https://fonts.google.com/specimen/Poppins) by Indian Type Foundry, SIL Open Font License (`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: Kdenlive's menu file, taken from the Kdenlive 26.08.3 source; used only by the coverage check. It stays under Kdenlive's GPL license, not the MIT License.
 
 ## License
 

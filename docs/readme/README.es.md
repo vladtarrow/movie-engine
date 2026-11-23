@@ -92,7 +92,7 @@ Cada comando de edición sigue el mismo ciclo seguro:
 |---|---|
 | Sistema operativo | Windows 10 u 11, x64 |
 | Editor | Compilación portable (standalone) de Kdenlive **26.08.3**. Otras versiones no se han probado. |
-| Node.js | 18 o posterior, como un simple `node.exe` copiado en `engine/node/` |
+| Node.js | 18 o posterior: el `.zip` de Windows x64 de nodejs.org, descomprimido en `engine/node/` |
 | Navegador | Microsoft Edge (incluido en Windows); los renderizadores de escenas lo usan en modo headless |
 | Agente | [Claude Code](https://claude.com/claude-code) o Codex. Opcional: todas las herramientas se pueden ejecutar también a mano. |
 | Disco | alrededor de 1 GB para el editor y las herramientas, más tus archivos multimedia |
@@ -107,12 +107,12 @@ git clone <repository-url> movie-engine
 cd movie-engine
 ```
 
-**1. Node.js.** Copia `node.exe` (18 o posterior) en `engine\node\`. No hace falta el instalador: basta con el exe. Todos los scripts se ejecutan a través de `engine\node.cmd`, nunca con un Node del sistema.
+**1. Node.js.** Descarga el `.zip` de Windows x64 de Node.js 18 o posterior desde <https://nodejs.org/en/download> y descomprime su contenido en `engine\node\`, de modo que queden `engine\node\node.exe` y `engine\node\npm.cmd`. No hacen falta el instalador ni un Node del sistema. Todos los scripts se ejecutan a través de `engine\node.cmd`, nunca con un Node del sistema.
 
 **2. Paquetes de Node** para la herramienta de voz y los renderizadores (las versiones están fijadas en `engine/voice/package.json`):
 
 ```powershell
-npm install --prefix engine/voice
+engine\node\npm.cmd install --prefix engine\voice
 ```
 
 **3. Kdenlive 26.08.3 portable.** Descarga `kdenlive-26.08.3_standalone.exe` desde <https://download.kde.org/stable/kdenlive/26.08/windows/> en `engine\installer\`, verifícalo y descomprímelo:
@@ -406,6 +406,7 @@ Las contribuciones son bienvenidas. Consulta [CONTRIBUTING.md](../../CONTRIBUTIN
 - [FFmpeg](https://ffmpeg.org), incluido con Kdenlive.
 - [msedge-tts](https://www.npmjs.com/package/msedge-tts) para la locución.
 - [Poppins](https://fonts.google.com/specimen/Poppins), de Indian Type Foundry, SIL Open Font License (`engine/fonts/OFL.txt`).
+- `engine/tools/data/kdenliveui-26.08.3.rc`: el archivo de menús de Kdenlive, tomado del código fuente de Kdenlive 26.08.3; solo lo usa la comprobación de cobertura. Sigue bajo la licencia GPL de Kdenlive, no bajo la licencia MIT.
 
 ## Licencia
 
