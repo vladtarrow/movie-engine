@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  GitHub social preview of the repository (1280x640). Regenerate from the repository root:
+    engine\node.cmd engine\tools\html-render.mjs docs\media\social.html docs\media\social-out --frames 0
+  then copy docs\media\social-out\*.png to docs\media\social-preview.png and upload it in Settings > Social preview.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: Poppins; src: url('../../engine/fonts/Poppins-Bold.ttf'); font-weight: 700; }
+  html, body { margin: 0; width: 1280px; height: 640px; overflow: hidden; }
+  body {
+    font-family: Poppins, 'Segoe UI', sans-serif; color: #1d1530;
+    background:
+      radial-gradient(circle at 12% 18%, #ffc6dc 0, transparent 38%),
+      radial-gradient(circle at 88% 22%, #b9ecf2 0, transparent 40%),
+      radial-gradient(circle at 25% 92%, #d9ccff 0, transparent 42%),
+      radial-gradient(circle at 82% 88%, #ffeab0 0, transparent 40%),
+      #f6f3fb;
+  }
+  .wrap { position: absolute; inset: 0; display: flex; align-items: center; padding: 0 80px; gap: 56px; }
+  .text { flex: 1; }
+  h1 { font-size: 92px; line-height: 1; margin: 0 0 22px; letter-spacing: -2px; }
+  h1 span { color: #e8336f; }
+  p { font-size: 33px; line-height: 1.3; margin: 0 0 34px; font-weight: 700; color: #4a4060; }
+  .chips { display: flex; gap: 14px; flex-wrap: wrap; }
+  .chip { font-size: 22px; font-weight: 700; padding: 10px 20px; border-radius: 999px; background: #fff;
+          box-shadow: 0 6px 18px rgba(60, 30, 90, .12); }
+  .editor { width: 470px; height: 380px; border-radius: 22px; background: #fff; overflow: hidden;
+            box-shadow: 0 24px 60px rgba(60, 30, 90, .22); display: flex; flex-direction: column; }
+  .bar { height: 34px; background: #2b2540; display: flex; align-items: center; gap: 8px; padding: 0 14px; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; background: #5d5578; }
+  .monitor { flex: 1; margin: 14px 14px 10px; border-radius: 12px;
+             background: linear-gradient(135deg, #ffd3e3, #c9f0f5); display: flex; align-items: center; justify-content: center;
+             font-size: 34px; font-weight: 700; }
+  .monitor b { color: #e8336f; margin-left: 10px; }
+  .tracks { padding: 0 14px 16px; display: grid; gap: 8px; }
+  .track { height: 26px; border-radius: 6px; background: #efecf6; position: relative; }
+  .clip { position: absolute; top: 3px; bottom: 3px; border-radius: 5px; }
+  .prompt { position: absolute; left: 640px; bottom: 58px; width: 420px; font-size: 19px; font-weight: 700;
+            background: #1d1530; color: #fff; padding: 14px 18px; border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(30, 10, 50, .3); }
+  .prompt i { color: #ff8fb6; font-style: normal; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="text">
+    <h1>Movie <span>Engine</span></h1>
+    <p>An AI agent edits your video in Kdenlive while you watch. Take over at any moment.</p>
+    <div class="chips">
+      <div class="chip">Claude Code · Codex</div>
+      <div class="chip">Kdenlive</div>
+      <div class="chip">Windows · portable</div>
+      <div class="chip">MIT</div>
+    </div>
+  </div>
+  <div class="editor">
+    <div class="bar"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    <div class="monitor">Hello,<b>brand</b></div>
+    <div class="tracks">
+      <div class="track"><div class="clip" style="left:4%;width:30%;background:#8f6cf0"></div><div class="clip" style="left:36%;width:22%;background:#e8336f"></div></div>
+      <div class="track"><div class="clip" style="left:4%;width:52%;background:#27b5c9"></div><div class="clip" style="left:58%;width:36%;background:#f3a531"></div></div>
+      <div class="track"><div class="clip" style="left:10%;width:70%;background:#c3bdd6"></div></div>
+    </div>
+  </div>
+</div>
+<div class="prompt"><i>&gt;</i> Cut the second shot to 1.8 s and add a title</div>
+<script>
+  window.SCENE = { fps: 30, frames: 1, width: 1280, height: 640 }
+  window.ready = document.fonts.ready
+  window.render = () => {}
+</script>
+</body>
+</html>
