@@ -11,7 +11,7 @@ AI 编程智能体（Claude Code、Codex）可以创建并修改真正的 Kdenli
 ![Agents: Claude Code | Codex](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex-8A5CF6)
 ![Portable](https://img.shields.io/badge/install-portable-2EA44F)
 
-[English](../../README.md) · **简体中文** · [हिन्दी](README.hi.md) · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · [Deutsch](README.de.md) · [日本語](README.ja.md) · [Türkçe](README.tr.md) · [한국어](README.ko.md)
+[English](../../README.md) · **简体中文** · [繁體中文](README.zh-TW.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · [Deutsch](README.de.md) · [日本語](README.ja.md) · [Türkçe](README.tr.md) · [한국어](README.ko.md) · [Українська](README.uk.md) · [Italiano](README.it.md) · [Polski](README.pl.md) · [Tiếng Việt](README.vi.md) · [فارسی](README.fa.md) · [ไทย](README.th.md) · [Kiswahili](README.sw.md) · [አማርኛ](README.am.md) · [Avañe'ẽ](README.gn.md) · [Setswana](README.tn.md)
 
 *本文为译文，英文 README 为权威参考版本。*
 
@@ -294,7 +294,7 @@ engine\node.cmd engine\audio\sfx.mjs materials\aigenerated\sfx
 $env:MOVIE_ENGINE_UI_LANG = 'ru'; engine\kdenlive.cmd
 ```
 
-UI Automation 通过菜单项的可见名称来查找它们。英文和俄文名称已内置（`engine/tools/kd-ui.ps1`，`$KdNames`）。对于其他语言，请在那里添加相应名称，并用以下命令检查：
+UI Automation 通过菜单项的可见名称来查找它们。31 种界面语言的名称已内置（`engine/tools/kd-ui.ps1`，`$KdNames`）。对于其他语言，请在那里添加相应名称，并用以下命令检查：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-langcheck.ps1

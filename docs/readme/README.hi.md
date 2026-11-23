@@ -11,7 +11,7 @@ AI कोडिंग एजेंट (Claude Code, Codex) असली Kdenlive
 ![Agents: Claude Code | Codex](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex-8A5CF6)
 ![Portable](https://img.shields.io/badge/install-portable-2EA44F)
 
-[English](../../README.md) · [简体中文](README.zh-CN.md) · **हिन्दी** · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · [Deutsch](README.de.md) · [日本語](README.ja.md) · [Türkçe](README.tr.md) · [한국어](README.ko.md)
+[English](../../README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · **हिन्दी** · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · [Deutsch](README.de.md) · [日本語](README.ja.md) · [Türkçe](README.tr.md) · [한국어](README.ko.md) · [Українська](README.uk.md) · [Italiano](README.it.md) · [Polski](README.pl.md) · [Tiếng Việt](README.vi.md) · [فارسی](README.fa.md) · [ไทย](README.th.md) · [Kiswahili](README.sw.md) · [አማርኛ](README.am.md) · [Avañe'ẽ](README.gn.md) · [Setswana](README.tn.md)
 
 *यह एक अनुवाद है; संदर्भ संस्करण अंग्रेज़ी README है।*
 
@@ -294,7 +294,7 @@ engine\node.cmd engine\audio\sfx.mjs materials\aigenerated\sfx
 $env:MOVIE_ENGINE_UI_LANG = 'ru'; engine\kdenlive.cmd
 ```
 
-UI Automation मेन्यू आइटम को उनके दिखने वाले नामों से ढूँढता है। अंग्रेज़ी और रूसी नाम पहले से शामिल हैं (`engine/tools/kd-ui.ps1`, `$KdNames`)। किसी भी दूसरी भाषा के लिए, उसके नाम वहाँ जोड़ें और इससे जाँचें:
+UI Automation मेन्यू आइटम को उनके दिखने वाले नामों से ढूँढता है। 31 इंटरफ़ेस भाषाओं के नाम पहले से शामिल हैं (`engine/tools/kd-ui.ps1`, `$KdNames`)। किसी भी दूसरी भाषा के लिए, उसके नाम वहाँ जोड़ें और इससे जाँचें:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-langcheck.ps1

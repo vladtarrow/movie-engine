@@ -11,7 +11,7 @@ AI coding agents (Claude Code, Codex) build and change real Kdenlive projects: f
 ![Agents: Claude Code | Codex](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex-8A5CF6)
 ![Portable](https://img.shields.io/badge/install-portable-2EA44F)
 
-**English** · [简体中文](docs/readme/README.zh-CN.md) · [हिन्दी](docs/readme/README.hi.md) · [Español](docs/readme/README.es.md) · [Français](docs/readme/README.fr.md) · [العربية](docs/readme/README.ar.md) · [বাংলা](docs/readme/README.bn.md) · [Português](docs/readme/README.pt.md) · [Русский](docs/readme/README.ru.md) · [اردو](docs/readme/README.ur.md) · [Bahasa Indonesia](docs/readme/README.id.md) · [Deutsch](docs/readme/README.de.md) · [日本語](docs/readme/README.ja.md) · [Türkçe](docs/readme/README.tr.md) · [한국어](docs/readme/README.ko.md)
+**English** · [简体中文](docs/readme/README.zh-CN.md) · [繁體中文](docs/readme/README.zh-TW.md) · [हिन्दी](docs/readme/README.hi.md) · [Español](docs/readme/README.es.md) · [Français](docs/readme/README.fr.md) · [العربية](docs/readme/README.ar.md) · [বাংলা](docs/readme/README.bn.md) · [Português](docs/readme/README.pt.md) · [Русский](docs/readme/README.ru.md) · [اردو](docs/readme/README.ur.md) · [Bahasa Indonesia](docs/readme/README.id.md) · [Deutsch](docs/readme/README.de.md) · [日本語](docs/readme/README.ja.md) · [Türkçe](docs/readme/README.tr.md) · [한국어](docs/readme/README.ko.md) · [Українська](docs/readme/README.uk.md) · [Italiano](docs/readme/README.it.md) · [Polski](docs/readme/README.pl.md) · [Tiếng Việt](docs/readme/README.vi.md) · [فارسی](docs/readme/README.fa.md) · [ไทย](docs/readme/README.th.md) · [Kiswahili](docs/readme/README.sw.md) · [አማርኛ](docs/readme/README.am.md) · [Avañe'ẽ](docs/readme/README.gn.md) · [Setswana](docs/readme/README.tn.md)
 
 </div>
 
@@ -292,7 +292,7 @@ The launchers start Kdenlive in **English** by default. To use another language,
 $env:MOVIE_ENGINE_UI_LANG = 'ru'; engine\kdenlive.cmd
 ```
 
-UI Automation finds menu items by their visible names. English and Russian names are built in (`engine/tools/kd-ui.ps1`, `$KdNames`). For any other language, add its names there and check with:
+UI Automation finds menu items by their visible names. Names for 31 interface languages are built in (`engine/tools/kd-ui.ps1`, `$KdNames`). For any other language, add its names there and check with:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-langcheck.ps1

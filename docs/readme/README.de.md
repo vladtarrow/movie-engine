@@ -11,7 +11,7 @@ KI-Coding-Agenten (Claude Code, Codex) erstellen und ändern echte Kdenlive-Proj
 ![Agents: Claude Code | Codex](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex-8A5CF6)
 ![Portable](https://img.shields.io/badge/install-portable-2EA44F)
 
-[English](../../README.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · **Deutsch** · [日本語](README.ja.md) · [Türkçe](README.tr.md) · [한국어](README.ko.md)
+[English](../../README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · **Deutsch** · [日本語](README.ja.md) · [Türkçe](README.tr.md) · [한국어](README.ko.md) · [Українська](README.uk.md) · [Italiano](README.it.md) · [Polski](README.pl.md) · [Tiếng Việt](README.vi.md) · [فارسی](README.fa.md) · [ไทย](README.th.md) · [Kiswahili](README.sw.md) · [አማርኛ](README.am.md) · [Avañe'ẽ](README.gn.md) · [Setswana](README.tn.md)
 
 *Dies ist eine Übersetzung. Maßgeblich ist die englische README.*
 
@@ -294,7 +294,7 @@ Die Starter öffnen Kdenlive standardmäßig auf **Englisch**. Für eine andere 
 $env:MOVIE_ENGINE_UI_LANG = 'ru'; engine\kdenlive.cmd
 ```
 
-UI Automation findet Menüeinträge anhand ihrer sichtbaren Namen. Englische und russische Namen sind eingebaut (`engine/tools/kd-ui.ps1`, `$KdNames`). Für jede andere Sprache trage dort ihre Namen ein und prüfe mit:
+UI Automation findet Menüeinträge anhand ihrer sichtbaren Namen. Namen für 31 Oberflächensprachen sind eingebaut (`engine/tools/kd-ui.ps1`, `$KdNames`). Für jede andere Sprache trage dort ihre Namen ein und prüfe mit:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-langcheck.ps1

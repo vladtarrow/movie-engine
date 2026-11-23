@@ -10,16 +10,39 @@ $script:KdScope = [System.Windows.Automation.TreeScope]
 function New-KdResult([int]$code, [string]$message) { [pscustomobject]@{ Code = $code; Message = $message } }
 
 # UI Automation names of the Kdenlive items we use, English first (the launchers start Kdenlive in English,
-# see Set-KdEnvironment), then Russian for an editor started in a Russian Windows without them.
+# see Set-KdEnvironment), then the other supported interface languages (MOVIE_ENGINE_UI_LANG):
+# ru, uk, de, fr, es, pt_BR, zh_CN, ja, it, pl, ar, bs, ca, cs, da, el, et, fi, ga, hr, hu, lt, lv, nb, nl, ro,
+# sk, sl, sv, tr. Taken from the Kdenlive 26.08.3 translations (kxmlgui6.mo, kconfigwidgets6.mo, kdenlive.mo,
+# kwidgetsaddons6_qt.qm) with the accelerator '&' removed; a string a translation lacks stays English. A new
+# language needs its names here and a run of tools\kd-langcheck.ps1 with MOVIE_ENGINE_UI_LANG set to it.
 $script:KdNames = @{
-    File    = @('File', 'Файл')
-    Save    = @('Save', 'Сохранить')
-    Revert  = @('Revert', 'Восстановить')
-    Recent  = @('Open Recent', 'Последние файлы')
-    Folder  = @('Create Folder', 'Создать папку')
+    File    = @('File', 'Файл', 'Datei', 'Fichier', 'Archivo', 'Arquivo', '文件(F)', 'ファイル(F)', 'Plik',
+                'ملف', 'Datoteka', 'Fitxer', 'Soubor', 'Fil', 'Αρχείο', 'Fail', 'Tiedosto', 'Comhad', 'Fájl', 'Failas',
+                'Datne', 'Bestand', 'Fișier', 'Súbor', 'Arkiv', 'Dosya')
+    Save    = @('Save', 'Сохранить', 'Зберегти', 'Speichern', 'Enregistrer', 'Guardar', 'Salvar', '保存(S)', 'Salva', 'Zapisz',
+                'احفظ', 'Snimi', 'Desa', 'Uložit', 'Gem', 'Αποθήκευση', 'Salvesta', 'Tallenna', 'Sábháil', 'Spremi', 'Mentés',
+                'Įrašyti', 'Saglabāt', 'Lagre', 'Opslaan', 'Salvează', 'Uložiť', 'Shrani', 'Spara', 'Kaydet')
+    Revert  = @('Revert', 'Восстановить', 'Відновити', 'Zuletzt gespeicherte Fassung', 'Annuler', 'Revertir', 'Reverter',
+                '还原(V)', '戻す(V)', 'Przywróć',
+                'اعكس', 'Vrati', 'Reverteix', 'Vrátit', 'Nulstil', 'Επαναφορά', 'Lähtesta', 'Palauta', 'Fill', 'Vrati izvorno',
+                'Visszaállítás', 'Sugrąžinti', 'Atstatīt', 'Tilbakestill', 'Beginwaarde', 'Anulează', 'Vrátiť', 'Povrni',
+                'Återställ', 'Eski Haline Döndür')
+    Recent  = @('Open Recent', 'Последние файлы', 'Відкрити недавні', 'Zuletzt geöffnete Dateien', 'Récemment ouvert(s)',
+                'Abrir reciente', 'Abrir recente', '打开最近文件(R)', '最近のファイルを開く(R)', 'Apri recente', 'Otwórz poprzedni',
+                'افتح ملفًا حديثًا', 'Otvori skorašnje', 'Obre''n un de recent', 'Otevřít nedávný', 'Åbn nylige', 'Άνοιγμα πρόσφατου',
+                'Ava viimati kasutatud', 'Avaa viimeaikainen', 'Oscail Rudaí Deireanacha', 'Otvori nedavno', 'Legutóbbi megnyitása',
+                'Atverti paskiausiai naudotą', 'Atvērt nesenu', 'Nylig brukt', 'Recent openen', 'Deschide recent', 'Otvoriť nedávne',
+                'Odpri nedavno', 'Öppna senaste', 'Son Kullanılanı Aç')
+    Folder  = @('Create Folder', 'Создать папку', 'Створити теку', 'Ordner erstellen', 'Créer un dossier', 'Crear carpeta',
+                'Criar pasta', '创建文件夹', 'フォルダを作成', 'Crea cartella', 'Utwórz katalog',
+                'أنشئ مجلّدًا', 'Napravi direktorij', 'Crea una carpeta', 'Vytvořit složku', 'Opret mappe', 'Δημιουργία φακέλου',
+                'Loo kataloog', 'Luo kansio', 'Cruthaigh Fillteán', 'Kreiraj mapu', 'Mappa létrehozása', 'Sukurti aplanką',
+                'Izveidot mapi', 'Map aanmaken', 'Creează dosar', 'Vytvoriť priečinok', 'Ustvari mapo', 'Skapa katalog', 'Klasör Oluştur')
 }
-$script:KdInfoTitle = '^(Information|Сведения)'               # KMessageBox::information, safe to close
-$script:KdRevertTitle = '^(Revert|Restore|Восстан|Верн)'        # the "discard unsaved changes?" question
+# KMessageBox::information, safe to close
+$script:KdInfoTitle = '^(Information|Сведения|Інформація|Informationen|Informations|Información|Informação|信息|情報|Informazioni|Informacja|معلومات|Informació|Informace|Πληροφορίες|Teave|Ilmoitus|Információ|Informacija|Informācija|Informasjon|Informatie|Informații|Informácia|Podrobnosti|Bilgi)'
+# the "discard unsaved changes?" question ("Revert to last saved version")
+$script:KdRevertTitle = '^(Revert|Restore|Восстан|Верн|Повернутися|Відновити|Zur letzten gespeicherten|Revenir à la dernière|Volver a última|Reverter para|恢复到最后保存|最後に保存した版|Ripristina all|Powrót do ostatniej|استرجع إلى آخر|Vrati na posljednju|Retorna a la darrera|Navrátit se k poslední|Rul tilbage til senest|Επαναφορά στην τελευταία|Viimati salvestatud|Palauta viimeksi|Fill ar an leagan|Visszatérés a dokumentum|Atgriezties pie pēdējās|Terugkeren naar laatste|Vrátiť sa k poslednej|Povrni na nazadnje|Återgå till senast|Son kaydedilen)'
 function New-KdNameCondition([string]$key) {
     $conds = @($script:KdNames[$key] | ForEach-Object { New-Object System.Windows.Automation.PropertyCondition($script:KdAE::NameProperty, $_) })
     if ($conds.Count -eq 1) { return $conds[0] }
@@ -93,7 +116,7 @@ function Get-KdTimelineId($main) {
     return $null
 }
 # Kdenlive's modal progress window while it loads. It is work in progress, not a question to the user.
-$script:KdProgressTitle = '^(Загрузка проекта|Loading project)'
+$script:KdProgressTitle = '^(Loading project|Загрузка проекта|Завантаження проєкту|Projekt wird geladen|Chargement d''un projet|Cargando proyecto|Carregando projeto|正在加载项目|プロジェクトを読み込んでいます|Caricamento del progetto|Wczytywanie projektu|يحمّل مشروعًا|S''està carregant el projecte|Načítám projekt|Φόρτωση έργου|Avataan projektia|Ag luchtú tionscadail|Ielādē projektu|Project wordt geladen|Načítavanie projektu|Nalaganje projekta|Läser in projekt|Proje Yükleniyor)'
 function Test-KdLoading($main) {
     [bool](Get-KdTopWindows $main.ProcessId | Where-Object { $_.Title -match $script:KdProgressTitle })
 }

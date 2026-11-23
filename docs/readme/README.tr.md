@@ -11,7 +11,7 @@ Yapay zekâ kodlama ajanları (Claude Code, Codex) gerçek Kdenlive projeleri ol
 ![Agents: Claude Code | Codex](https://img.shields.io/badge/agents-Claude%20Code%20%7C%20Codex-8A5CF6)
 ![Portable](https://img.shields.io/badge/install-portable-2EA44F)
 
-[English](../../README.md) · [简体中文](README.zh-CN.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · [Deutsch](README.de.md) · [日本語](README.ja.md) · **Türkçe** · [한국어](README.ko.md)
+[English](../../README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [हिन्दी](README.hi.md) · [Español](README.es.md) · [Français](README.fr.md) · [العربية](README.ar.md) · [বাংলা](README.bn.md) · [Português](README.pt.md) · [Русский](README.ru.md) · [اردو](README.ur.md) · [Bahasa Indonesia](README.id.md) · [Deutsch](README.de.md) · [日本語](README.ja.md) · **Türkçe** · [한국어](README.ko.md) · [Українська](README.uk.md) · [Italiano](README.it.md) · [Polski](README.pl.md) · [Tiếng Việt](README.vi.md) · [فارسی](README.fa.md) · [ไทย](README.th.md) · [Kiswahili](README.sw.md) · [አማርኛ](README.am.md) · [Avañe'ẽ](README.gn.md) · [Setswana](README.tn.md)
 
 *Bu bir çeviridir. Esas alınan sürüm İngilizce README'dir.*
 
@@ -294,7 +294,7 @@ Başlatıcılar Kdenlive'ı varsayılan olarak **İngilizce** açar. Başka bir 
 $env:MOVIE_ENGINE_UI_LANG = 'ru'; engine\kdenlive.cmd
 ```
 
-UI Automation menü öğelerini görünen adlarıyla bulur. İngilizce ve Rusça adlar yerleşiktir (`engine/tools/kd-ui.ps1`, `$KdNames`). Başka bir dil için adlarını oraya ekleyin ve şununla denetleyin:
+UI Automation menü öğelerini görünen adlarıyla bulur. 31 arayüz dilinin adları yerleşiktir (`engine/tools/kd-ui.ps1`, `$KdNames`). Başka bir dil için adlarını oraya ekleyin ve şununla denetleyin:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-langcheck.ps1
