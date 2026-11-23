@@ -1,6 +1,6 @@
 <div align="center">
 
-# movie-engine
+# Movie Engine
 
 **Um agente de IA edita seu vídeo no Kdenlive enquanto você assiste, e você pode assumir o controle a qualquer momento.**
 
@@ -46,7 +46,7 @@ Agentes de programação com IA (Claude Code, Codex) criam e alteram projetos re
 
 Editores de vídeo são feitos para mãos no mouse. Agentes de IA são bons em estrutura, timing e repetição: posicionar 300 clipes no ritmo da música, sincronizar cada legenda com a voz, refazer uma cena depois de um feedback. Mas eles não conseguem sair clicando por uma interface gráfica sem tomar conta da sua área de trabalho.
 
-O Kdenlive é um editor open source robusto, mas no Windows ele **não tem API de automação**: o controle via D-Bus só existe nas builds para Linux, e os forks que adicionam um estão abandonados ou não são seguros. O movie-engine resolve isso sem modificar o editor:
+O Kdenlive é um editor open source robusto, mas no Windows ele **não tem API de automação**: o controle via D-Bus só existe nas builds para Linux, e os forks que adicionam um estão abandonados ou não são seguros. O Movie Engine resolve isso sem modificar o editor:
 
 1. O agente edita o arquivo de projeto `.kdenlive` por meio de uma linha de comando testada (`engine/kdp.ps1`).
 2. O Kdenlive em execução recebe a ordem de recarregar o arquivo via Windows UI Automation, sem teclas, sem mouse e sem roubar o foco.
@@ -235,7 +235,7 @@ Projetos grandes: recarregar um projeto de 1000 clipes leva minutos, e as ferram
 
 ## Geradores: o que o Kdenlive não consegue fazer
 
-O Kdenlive/MLT não tem animação de texto letra por letra, nem expressões, e quase nada de 3D; além disso, efeitos pesados deixam a reprodução lenta. O movie-engine renderiza essas partes fora e as coloca na linha do tempo como clipes comuns, geralmente com canal alfa, em uma faixa acima das imagens. O script gerador e suas entradas ficam na pasta do projeto, de modo que um clipe pode ser gerado de novo quando o texto, a fonte ou o timing mudam.
+O Kdenlive/MLT não tem animação de texto letra por letra, nem expressões, e quase nada de 3D; além disso, efeitos pesados deixam a reprodução lenta. O Movie Engine renderiza essas partes fora e as coloca na linha do tempo como clipes comuns, geralmente com canal alfa, em uma faixa acima das imagens. O script gerador e suas entradas ficam na pasta do projeto, de modo que um clipe pode ser gerado de novo quando o texto, a fonte ou o timing mudam.
 
 | Ferramenta | Gera |
 |---|---|
@@ -410,4 +410,4 @@ Contribuições são bem-vindas. Veja [CONTRIBUTING.md](../../CONTRIBUTING.md). 
 
 ## Licença
 
-O código próprio do movie-engine é distribuído sob a [Licença MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, os pacotes do Node.js e a fonte Poppins mantêm suas próprias licenças.
+O código próprio do Movie Engine é distribuído sob a [Licença MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, os pacotes do Node.js e a fonte Poppins mantêm suas próprias licenças.

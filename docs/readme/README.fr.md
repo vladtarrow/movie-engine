@@ -1,6 +1,6 @@
 <div align="center">
 
-# movie-engine
+# Movie Engine
 
 **Un agent IA monte votre vidéo dans Kdenlive sous vos yeux, et vous pouvez reprendre la main à tout moment.**
 
@@ -46,7 +46,7 @@ Des agents de programmation IA (Claude Code, Codex) créent et modifient de vrai
 
 Les logiciels de montage sont conçus pour une main posée sur la souris. Les agents IA, eux, excellent dans la structure, le timing et la répétition : placer 300 clips sur le rythme, caler chaque sous-titre sur la voix, refaire une scène après un retour. Mais ils ne peuvent pas cliquer dans une interface graphique sans s'emparer de votre bureau.
 
-Kdenlive est un excellent éditeur open source, mais sous Windows il n'a **aucune API d'automatisation** : le contrôle par D-Bus n'existe que dans les builds Linux, et les forks qui en ajoutent une sont soit abandonnés, soit peu sûrs. movie-engine résout ce problème sans modifier l'éditeur :
+Kdenlive est un excellent éditeur open source, mais sous Windows il n'a **aucune API d'automatisation** : le contrôle par D-Bus n'existe que dans les builds Linux, et les forks qui en ajoutent une sont soit abandonnés, soit peu sûrs. Movie Engine résout ce problème sans modifier l'éditeur :
 
 1. L'agent modifie le fichier de projet `.kdenlive` via une ligne de commande testée (`engine/kdp.ps1`).
 2. Le Kdenlive en cours d'exécution reçoit l'ordre de recharger le fichier via Windows UI Automation, sans frappe clavier, sans souris et sans voler le focus.
@@ -235,7 +235,7 @@ Gros projets : recharger un projet de 1000 clips prend plusieurs minutes, et les
 
 ## Générateurs pour ce que Kdenlive ne sait pas faire
 
-Kdenlive/MLT n'offre ni animation de texte lettre par lettre, ni expressions, et très peu de 3D ; de plus, les effets lourds ralentissent la lecture. movie-engine rend ces éléments à l'extérieur et les place sur la timeline comme des clips ordinaires, généralement avec couche alpha, sur une piste au-dessus des images. Le script générateur et ses données d'entrée restent dans le dossier du projet : un clip peut donc être régénéré quand le texte, la police ou le minutage changent.
+Kdenlive/MLT n'offre ni animation de texte lettre par lettre, ni expressions, et très peu de 3D ; de plus, les effets lourds ralentissent la lecture. Movie Engine rend ces éléments à l'extérieur et les place sur la timeline comme des clips ordinaires, généralement avec couche alpha, sur une piste au-dessus des images. Le script générateur et ses données d'entrée restent dans le dossier du projet : un clip peut donc être régénéré quand le texte, la police ou le minutage changent.
 
 | Outil | Produit |
 |---|---|
@@ -380,7 +380,7 @@ Non. Avant toute écriture, vos modifications non enregistrées sont enregistré
 Oui. C'est le Kdenlive d'origine, avec son propre dossier de réglages. Montez, prévisualisez et faites vos rendus comme d'habitude.
 
 **Est-ce que cela fonctionne avec un Kdenlive déjà installé ?**
-movie-engine utilise sa propre copie portable dans `engine\Kdenlive\` : votre Kdenlive installé et ses réglages restent intacts.
+Movie Engine utilise sa propre copie portable dans `engine\Kdenlive\` : votre Kdenlive installé et ses réglages restent intacts.
 
 **Pourquoi pas un fork de Kdenlive avec API, ou un autre éditeur ?**
 Sous Windows, il n'existe aucun fork maintenu et sûr (étude de 2026-11). OpenShot, Blender VSE, DaVinci Resolve, Shotcut et des éditeurs web ont été évalués ; Kdenlive offrait les possibilités de montage les plus riches. Une proposition d'API REST en amont (merge request !902) est suivie de près.
@@ -410,4 +410,4 @@ Les contributions sont les bienvenues. Voir [CONTRIBUTING.md](../../CONTRIBUTING
 
 ## Licence
 
-Le code propre à movie-engine est publié sous [licence MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, les paquets Node.js et la police Poppins conservent leurs propres licences.
+Le code propre à Movie Engine est publié sous [licence MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, les paquets Node.js et la police Poppins conservent leurs propres licences.

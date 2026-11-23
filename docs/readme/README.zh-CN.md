@@ -1,6 +1,6 @@
 <div align="center">
 
-# movie-engine
+# Movie Engine
 
 **AI 智能体在 Kdenlive 中剪辑你的视频，你在一旁实时观看，并且随时可以接手。**
 
@@ -46,7 +46,7 @@ AI 编程智能体（Claude Code、Codex）可以创建并修改真正的 Kdenli
 
 视频编辑器是为握着鼠标的双手设计的。AI 智能体则擅长结构、节奏和重复性工作：把 300 个片段卡在节拍上、让每一条字幕与配音精确对齐、根据反馈重做某个场景。但它们无法在不接管你桌面的情况下去点击图形界面。
 
-Kdenlive 是一款强大的开源编辑器，但在 Windows 上它**没有自动化 API**：D-Bus 控制只存在于 Linux 版本中，而添加了 API 的分支要么无人维护，要么不安全。movie-engine 在不修改编辑器的前提下解决了这个问题：
+Kdenlive 是一款强大的开源编辑器，但在 Windows 上它**没有自动化 API**：D-Bus 控制只存在于 Linux 版本中，而添加了 API 的分支要么无人维护，要么不安全。Movie Engine 在不修改编辑器的前提下解决了这个问题：
 
 1. 智能体通过一个经过测试的命令行工具（`engine/kdp.ps1`）编辑 `.kdenlive` 项目文件。
 2. 通过 Windows UI Automation 通知正在运行的 Kdenlive 重新加载文件，不发送按键、不操作鼠标、也不抢占焦点。
@@ -235,7 +235,7 @@ Start-Process powershell -WindowStyle Hidden -ArgumentList '-NoProfile','-Execut
 
 ## 用生成器补足 Kdenlive 做不到的事
 
-Kdenlive/MLT 没有逐字母文字动画，没有表达式，3D 功能也很少，而且重型特效会拖慢播放。movie-engine 在外部渲染这些部分，再把它们作为普通片段放到时间线上，通常带有 alpha 通道，放在画面轨道之上。生成器脚本及其输入都保存在项目文件夹中，因此当文字、字体或时间发生变化时，可以重新生成片段。
+Kdenlive/MLT 没有逐字母文字动画，没有表达式，3D 功能也很少，而且重型特效会拖慢播放。Movie Engine 在外部渲染这些部分，再把它们作为普通片段放到时间线上，通常带有 alpha 通道，放在画面轨道之上。生成器脚本及其输入都保存在项目文件夹中，因此当文字、字体或时间发生变化时，可以重新生成片段。
 
 | 工具 | 生成内容 |
 |---|---|
@@ -410,4 +410,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File engine\tools\kd-livetest.ps1
 
 ## 许可证
 
-movie-engine 自身代码采用 [MIT 许可证](../../LICENSE)发布。Kdenlive、MLT、FFmpeg、Node.js 依赖包和 Poppins 字体各自保留其原有许可证。
+Movie Engine 自身代码采用 [MIT 许可证](../../LICENSE)发布。Kdenlive、MLT、FFmpeg、Node.js 依赖包和 Poppins 字体各自保留其原有许可证。

@@ -1,4 +1,4 @@
-# movie-engine — instructions for AI agents (Claude Code, Codex)
+# Movie Engine — instructions for AI agents (Claude Code, Codex)
 
 This file is the single source of instructions for every agent. `CLAUDE.md` only imports it.
 Keep it current: whenever you learn something verified about the engine or a quirk, add it here or to the matching skill in `.claude/skills/`.

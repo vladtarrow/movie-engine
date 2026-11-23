@@ -1,6 +1,6 @@
 <div align="center">
 
-# movie-engine
+# Movie Engine
 
 **Bir yapay zekâ ajanı siz izlerken videonuzu Kdenlive'da kurgular ve siz istediğiniz an kontrolü devralabilirsiniz.**
 
@@ -46,7 +46,7 @@ Yapay zekâ kodlama ajanları (Claude Code, Codex) gerçek Kdenlive projeleri ol
 
 Video düzenleyiciler fareyi tutan bir el için tasarlanmıştır. Yapay zekâ ajanları ise yapı, zamanlama ve tekrar gerektiren işlerde iyidir: 300 klibi ritme oturtmak, her alt yazıyı sese göre zamanlamak, geri bildirimden sonra bir sahneyi yeniden kurgulamak. Ancak masaüstünüzü ele geçirmeden bir arayüzde tıklayarak ilerleyemezler.
 
-Kdenlive güçlü bir açık kaynak düzenleyicidir, ancak Windows'ta **otomasyon API'si yoktur**: D-Bus ile kontrol yalnızca Linux sürümlerinde bulunur ve bunu ekleyen çatallar ya bakımsızdır ya da güvensizdir. movie-engine bu sorunu düzenleyiciye yama yapmadan çözer:
+Kdenlive güçlü bir açık kaynak düzenleyicidir, ancak Windows'ta **otomasyon API'si yoktur**: D-Bus ile kontrol yalnızca Linux sürümlerinde bulunur ve bunu ekleyen çatallar ya bakımsızdır ya da güvensizdir. Movie Engine bu sorunu düzenleyiciye yama yapmadan çözer:
 
 1. Ajan, `.kdenlive` proje dosyasını test edilmiş bir komut satırıyla (`engine/kdp.ps1`) düzenler.
 2. Çalışan Kdenlive'a, Windows UI Automation aracılığıyla dosyayı yeniden yüklemesi söylenir; tuş vuruşu yok, fare yok, odak çalma yok.
@@ -235,7 +235,7 @@ Büyük projeler: 1000 klipli bir projenin yeniden yüklenmesi dakikalar sürer 
 
 ## Üreteçler: Kdenlive'ın yapamadıkları
 
-Kdenlive/MLT'de harf harf metin animasyonu ve ifadeler (expressions) yoktur, 3B desteği de azdır; ağır efektler ise oynatmayı yavaşlatır. movie-engine bu tür parçaları dışarıda işler ve zaman çizelgesine sıradan klipler olarak, genellikle alfa kanalıyla, görüntülerin üstündeki bir ize koyar. Üreteç betiği ve girdileri proje klasöründe kalır; böylece metin, yazı tipi veya zamanlama değiştiğinde klip yeniden üretilebilir.
+Kdenlive/MLT'de harf harf metin animasyonu ve ifadeler (expressions) yoktur, 3B desteği de azdır; ağır efektler ise oynatmayı yavaşlatır. Movie Engine bu tür parçaları dışarıda işler ve zaman çizelgesine sıradan klipler olarak, genellikle alfa kanalıyla, görüntülerin üstündeki bir ize koyar. Üreteç betiği ve girdileri proje klasöründe kalır; böylece metin, yazı tipi veya zamanlama değiştiğinde klip yeniden üretilebilir.
 
 | Araç | Ürettiği |
 |---|---|
@@ -410,4 +410,4 @@ Katkılarınızı bekliyoruz. Bkz. [CONTRIBUTING.md](../../CONTRIBUTING.md). Kı
 
 ## Lisans
 
-movie-engine'in kendi kodu [MIT Lisansı](../../LICENSE) ile yayımlanmaktadır. Kdenlive, MLT, FFmpeg, Node.js paketleri ve Poppins yazı tipi kendi lisanslarını korur.
+Movie Engine'in kendi kodu [MIT Lisansı](../../LICENSE) ile yayımlanmaktadır. Kdenlive, MLT, FFmpeg, Node.js paketleri ve Poppins yazı tipi kendi lisanslarını korur.

@@ -1,4 +1,4 @@
-# Contributing to movie-engine
+# Contributing to Movie Engine
 
 Thank you for helping. This project lets AI agents edit Kdenlive projects while a person keeps working in the same editor, so it has a few rules that protect that person. Please read them before you change code.
 

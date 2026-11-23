@@ -1,6 +1,6 @@
 <div align="center">
 
-# movie-engine
+# Movie Engine
 
 **Agen AI menyunting video Anda di Kdenlive sementara Anda menonton, dan Anda bisa mengambil alih kapan saja.**
 
@@ -46,7 +46,7 @@ Agen coding AI (Claude Code, Codex) membangun dan mengubah proyek Kdenlive sungg
 
 Editor video dirancang untuk tangan yang memegang mouse. Agen AI unggul dalam struktur, pengaturan waktu, dan pekerjaan berulang: menempatkan 300 klip sesuai ketukan, menyelaraskan setiap teks dengan suara, mengulang sebuah adegan setelah mendapat masukan. Namun mereka tidak bisa mengklik GUI tanpa mengambil alih desktop Anda.
 
-Kdenlive adalah editor open-source yang andal, tetapi di Windows ia **tidak punya API otomatisasi**: kontrol lewat D-Bus hanya ada di build Linux, dan fork yang menambahkannya entah tidak lagi dipelihara atau tidak aman. movie-engine memecahkan masalah ini tanpa mem-patch editor:
+Kdenlive adalah editor open-source yang andal, tetapi di Windows ia **tidak punya API otomatisasi**: kontrol lewat D-Bus hanya ada di build Linux, dan fork yang menambahkannya entah tidak lagi dipelihara atau tidak aman. Movie Engine memecahkan masalah ini tanpa mem-patch editor:
 
 1. Agen menyunting file proyek `.kdenlive` melalui baris perintah yang sudah diuji (`engine/kdp.ps1`).
 2. Kdenlive yang sedang berjalan diminta memuat ulang file tersebut melalui Windows UI Automation, tanpa penekanan tombol, tanpa mouse, dan tanpa merebut fokus.
@@ -235,7 +235,7 @@ Proyek besar: memuat ulang proyek berisi 1000 klip memakan waktu beberapa menit,
 
 ## Generator: yang tidak bisa dilakukan Kdenlive
 
-Kdenlive/MLT tidak punya animasi teks per huruf, tidak punya expression, dukungan 3D-nya minim, dan efek berat memperlambat pemutaran. movie-engine merender bagian-bagian seperti itu di luar dan menempatkannya di timeline sebagai klip biasa, umumnya dengan alpha, pada track di atas gambar. Skrip generator dan input-nya tetap berada di folder proyek, sehingga klip bisa dibuat ulang ketika teks, font, atau timing berubah.
+Kdenlive/MLT tidak punya animasi teks per huruf, tidak punya expression, dukungan 3D-nya minim, dan efek berat memperlambat pemutaran. Movie Engine merender bagian-bagian seperti itu di luar dan menempatkannya di timeline sebagai klip biasa, umumnya dengan alpha, pada track di atas gambar. Skrip generator dan input-nya tetap berada di folder proyek, sehingga klip bisa dibuat ulang ketika teks, font, atau timing berubah.
 
 | Tool | Menghasilkan |
 |---|---|
@@ -410,4 +410,4 @@ Kontribusi sangat diterima. Lihat [CONTRIBUTING.md](../../CONTRIBUTING.md). Sing
 
 ## Lisensi
 
-Kode milik movie-engine sendiri dirilis di bawah [Lisensi MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, paket Node.js, dan font Poppins tetap memakai lisensinya masing-masing.
+Kode milik Movie Engine sendiri dirilis di bawah [Lisensi MIT](../../LICENSE). Kdenlive, MLT, FFmpeg, paket Node.js, dan font Poppins tetap memakai lisensinya masing-masing.

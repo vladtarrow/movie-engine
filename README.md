@@ -1,6 +1,6 @@
 <div align="center">
 
-# movie-engine
+# Movie Engine
 
 **An AI agent edits your video in Kdenlive while you watch, and you can take over at any moment.**
 
@@ -44,7 +44,7 @@ AI coding agents (Claude Code, Codex) build and change real Kdenlive projects: f
 
 Video editors are built for hands on a mouse. AI agents are good at structure, timing and repetition: placing 300 clips on the beat, timing every caption to the voice, redoing a scene after feedback. They cannot click through a GUI without taking over your desktop.
 
-Kdenlive is a strong open-source editor, but on Windows it has **no automation API**: D-Bus control exists only on Linux builds, and the forks that add one are either unmaintained or unsafe. movie-engine solves this without patching the editor:
+Kdenlive is a strong open-source editor, but on Windows it has **no automation API**: D-Bus control exists only on Linux builds, and the forks that add one are either unmaintained or unsafe. Movie Engine solves this without patching the editor:
 
 1. The agent edits the `.kdenlive` project file through a tested command line (`engine/kdp.ps1`).
 2. The running Kdenlive is told to reload the file through Windows UI Automation, with no keystrokes, no mouse and no focus stealing.
@@ -233,7 +233,7 @@ Big projects: a reload of a 1000-clip project takes minutes, and the tools wait 
 
 ## Generators: what Kdenlive cannot do
 
-Kdenlive/MLT has no per-letter text animation, no expressions and little 3D, and heavy effects slow playback. movie-engine renders such parts outside and puts them on the timeline as ordinary clips, usually with alpha, on a track above the pictures. The generator script and its inputs stay in the project folder, so a clip can be regenerated when the text, font or timing changes.
+Kdenlive/MLT has no per-letter text animation, no expressions and little 3D, and heavy effects slow playback. Movie Engine renders such parts outside and puts them on the timeline as ordinary clips, usually with alpha, on a track above the pictures. The generator script and its inputs stay in the project folder, so a clip can be regenerated when the text, font or timing changes.
 
 | Tool | Makes |
 |---|---|
@@ -408,4 +408,4 @@ Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md). In short:
 
 ## License
 
-movie-engine's own code is released under the [MIT License](LICENSE). Kdenlive, MLT, FFmpeg, Node.js packages and the Poppins font keep their own licenses.
+Movie Engine's own code is released under the [MIT License](LICENSE). Kdenlive, MLT, FFmpeg, Node.js packages and the Poppins font keep their own licenses.
