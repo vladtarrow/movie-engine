@@ -1,0 +1,14 @@
+{
+  "name": "vladtarrow-movie-engine",
+  "description": "Movie Engine: AI video editing in Kdenlive with Claude Code.",
+  "owner": { "name": "Vladyslav Tarasenko", "url": "https://github.com/vladtarrow" },
+  "plugins": [
+    {
+      "name": "movie-engine",
+      "source": "./",
+      "description": "AI agents edit real Kdenlive video projects while you watch in the open editor (Windows).",
+      "category": "productivity",
+      "tags": ["kdenlive", "video-editing", "windows"]
+    }
+  ]
+}

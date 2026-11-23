@@ -5,6 +5,8 @@ description: Create and edit Kdenlive .kdenlive project files (MLT XML) for this
 
 # Kdenlive project files
 
+Paths below are relative to a Movie Engine folder (a clone of https://github.com/vladtarrow/movie-engine). If the current project has no `engine\kdp.ps1`, it is not one: use the `movie-engine-setup` skill first instead of guessing paths.
+
 A `.kdenlive` file is MLT XML with Kdenlive properties. Kdenlive 26.08.3 opens older documents (`kdenlive:docproperties.version` 1.04, `producer="main_bin"`) and upgrades them in memory on load (verified). Once Kdenlive itself saves, the file is in the newer format (version 1.1, with sequences and uuids) — read such a file before editing it and preserve everything you do not understand.
 
 ## Use the tool, not hand edits

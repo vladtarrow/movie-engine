@@ -44,7 +44,7 @@ An AI-driven video production setup on top of the Kdenlive editor. The AI builds
 
 ### Not in git (see `.gitignore`)
 
-`engine/Kdenlive/`, `engine/installer/`, `engine/profile-kdenlive/`, `engine/node/`, `node_modules/`, `out/`, `.shots/`, `materials/download/`. On a fresh clone (ask the user before downloading):
+`engine/Kdenlive/`, `engine/installer/`, `engine/profile-kdenlive/`, `engine/node/`, `node_modules/`, `out/`, `.shots/`, `materials/download/`. On a fresh clone (ask the user before downloading), `setup.cmd` / `engine\install.ps1` does steps 1-3 and skips what is already there (`-DryRun` shows the plan without downloading; exit 0 ready, 1 failed). By hand:
 1. Unpack the Windows x64 `.zip` of Node.js 18+ from `https://nodejs.org/en/download` into `engine/node/`, so that `engine\node\node.exe` and `engine\node\npm.cmd` are there. A bare `node.exe` runs the scripts but has no npm for step 2.
 2. `engine\node\npm.cmd install --prefix engine\voice` (versions pinned in `engine/voice/package.json`).
 3. Download `kdenlive-26.08.3_standalone.exe` from `https://download.kde.org/stable/kdenlive/26.08/windows/` into `engine/installer/`, check its SHA-256 (above), unpack with `engine\installer\kdenlive-26.08.3_standalone.exe -o"engine\Kdenlive" -y` (7-Zip self-extractor, no admin).
@@ -61,6 +61,8 @@ The repository is public, so tracked files must not contain absolute paths of on
 
 | File | Purpose |
 |---|---|
+| `install.ps1 [-DryRun] [-NodeVersion vX] [-SkipKdenlive]` (`setup.cmd` in the repo root runs it) | One-step setup of what is not in git: Node.js latest LTS zip (checked against nodejs.org `SHASUMS256.txt`) into `node/`, `npm install` of `voice/`, Kdenlive 26.08.3 (SHA-256 above) into `Kdenlive/`. Downloads land in `installer/`. Tested 2026-11-23 only with `-DryRun`. |
+| Claude Code plugin | `.claude-plugin/plugin.json` + `marketplace.json` publish `.claude/skills/` (incl. `movie-engine-setup`) as plugin `movie-engine@vladtarrow-movie-engine`. Skills only work inside a Movie Engine folder; outside one they point to `movie-engine-setup`. Not checked with `claude plugin validate` (no CLI on this PC). |
 | `kdenlive.cmd [project]` | Start Kdenlive for the user (normal window); a project opens through `tools/kd-open.ps1`. Redirects USERPROFILE/APPDATA/LOCALAPPDATA/XDG_* to `engine/profile-kdenlive`. |
 | `open-last-project.cmd` (repo root) | For the user: opens Kdenlive with the project open last, via `tools/kd-open-last.ps1` (newest existing entry of `[Recent Files]`). Starts empty when there is none. |
 | `kdenlive-bg.ps1 [project]` | Start Kdenlive for agents, minimized (same profile redirection). With a project it opens through `tools/kd-open.ps1` and returns when loaded (exit 0; 4 not confirmed): 139 s on a 1000-clip project. **The empty editor still takes the keyboard focus for about 3 s as it appears: do not run it while the user works without asking.** |

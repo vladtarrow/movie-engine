@@ -103,7 +103,19 @@ Everything is installed **inside the folder**. Nothing needs admin rights.
 ```powershell
 git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
+.\setup.cmd
 ```
+
+`setup.cmd` does steps 1–3 below in one go: it downloads Node.js and Kdenlive, checks their SHA-256, unpacks them into the folder and installs the Node packages. Parts that are already there are skipped. Run `.\setup.cmd -DryRun` first to see what it would download.
+
+**With Claude Code** you can also add the plugin, which brings the skills and a setup skill that clones and installs Movie Engine for you:
+
+```
+/plugin marketplace add vladtarrow/movie-engine
+/plugin install movie-engine@vladtarrow-movie-engine
+```
+
+The same setup by hand:
 
 **1. Node.js.** Download the Windows x64 `.zip` of Node.js 18 or newer from <https://nodejs.org/en/download> and unpack its contents into `engine\node\`, so that `engine\node\node.exe` and `engine\node\npm.cmd` are there. No installer and no system Node are needed. All scripts run through `engine\node.cmd`, never through a system Node.
 

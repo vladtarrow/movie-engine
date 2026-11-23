@@ -5,6 +5,8 @@ description: Drive the running Kdenlive in this project without disturbing the u
 
 # Driving the running Kdenlive (Windows, no focus stealing)
 
+Paths below are relative to a Movie Engine folder (a clone of https://github.com/vladtarrow/movie-engine). If the current project has no `engine\kd-ui.ps1`, it is not one: use the `movie-engine-setup` skill first instead of guessing paths.
+
 The user works on the same desktop. Every step here uses UI Automation patterns or window-only capture. Never use SetForegroundWindow, SendKeys, keybd_event, mouse input or desktop screenshots.
 
 ## Start
@@ -12,7 +14,7 @@ The user works on the same desktop. Every step here uses UI Automation patterns 
 - Agents: `powershell -NoProfile -ExecutionPolicy Bypass -File engine\kdenlive-bg.ps1 projects\<name>\<name>.kdenlive` — minimized, opens through `tools\kd-open.ps1` and returns when the project is loaded (exit 0; 4 not confirmed). **The empty editor takes the focus for about 3 s as it appears: ask before running it while the user works.** First start shows a splash for about 30 s and then a one-time "quick setup" wizard (only on a fresh profile).
 - Why `kd-open.ps1`: `kdenlive.exe <project>` restores the panel layout over the fully built timeline (`ProjectManager::doOpenFile` emits `GUISetupDone` last), and each UI Automation event then walks all timeline items (stack samples 2026-11-22). Empty start + File > Recent files avoids it: ~12 min became 139 s on a 1000-clip project. If the menu route fails it says "slow way" and starts directly. A reload (Revert) does not restore the layout and is not affected.
 - User: `engine\kdenlive.cmd [project]`.
-- Interface language: English by default (`LANGUAGE=en_US`); `MOVIE_ENGINE_UI_LANG=ru` (or another code) changes it. UI Automation names live in `engine\tools\kd-ui.ps1` `$KdNames` (English + Russian); `engine\tools\kd-langcheck.ps1` shows the menu bar names of a test instance (verified 2026-11-23 for both, `docs\proof\language*.txt`).
+- Interface language: English by default (`LANGUAGE=en_US`); `MOVIE_ENGINE_UI_LANG=ru` (or another code) changes it. UI Automation names live in `engine\tools\kd-ui.ps1` `$KdNames` (31 interface languages, see `AGENTS.md`); `engine\tools\kd-langcheck.ps1` finds File, Save, Revert and Open Recent in a test instance (verified 2026-11-23 for all 31, `docs\proof\language*.txt`).
 - Both redirect USERPROFILE, APPDATA, LOCALAPPDATA and XDG_* to `engine\profile-kdenlive`, so nothing is written to the Windows profile (verified: `kdenliverc` lands in `engine\profile-kdenlive\AppData\Local`).
 - Only one Kdenlive at a time: launching `kdenlive.exe file` again starts a second process; it does not hand off to the running one.
 

@@ -1,0 +1,11 @@
+{
+  "name": "movie-engine",
+  "displayName": "Movie Engine",
+  "description": "AI agents edit real Kdenlive video projects while you watch in the open editor (Windows). Skills: set up Movie Engine, edit .kdenlive projects, drive the running Kdenlive without stealing focus.",
+  "author": { "name": "Vladyslav Tarasenko" },
+  "homepage": "https://github.com/vladtarrow/movie-engine",
+  "repository": "https://github.com/vladtarrow/movie-engine",
+  "license": "MIT",
+  "keywords": ["kdenlive", "video-editing", "mlt", "windows", "ui-automation", "video-automation"],
+  "skills": ["./.claude/skills/"]
+}
