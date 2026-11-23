@@ -61,7 +61,7 @@ The repository is public, so tracked files must not contain absolute paths of on
 
 | File | Purpose |
 |---|---|
-| `install.ps1 [-DryRun] [-NodeVersion vX] [-SkipKdenlive]` (`setup.cmd` in the repo root runs it) | One-step setup of what is not in git: Node.js latest LTS zip (checked against nodejs.org `SHASUMS256.txt`) into `node/`, `npm install` of `voice/`, Kdenlive 26.08.3 (SHA-256 above) into `Kdenlive/`. Downloads land in `installer/`. Tested 2026-11-23 only with `-DryRun`. |
+| `install.ps1 [-DryRun] [-NodeVersion vX] [-SkipKdenlive]` (`setup.cmd` in the repo root runs it) | One-step setup of what is not in git: Node.js latest LTS zip (checked against nodejs.org `SHASUMS256.txt`) into `node/`, `npm install` of `voice/`, Kdenlive 26.08.3 (SHA-256 above) into `Kdenlive/`. Downloads land in `installer/`, npm's cache too (`installer/npm-cache`, not the Windows profile). Full run tested 2026-11-23 on a fresh clone: 140 s, then kdp edit/frame, voice, sfx, html-render, film-render and kd-langcheck all passed. |
 | Claude Code plugin | `.claude-plugin/plugin.json` + `marketplace.json` publish `.claude/skills/` (incl. `movie-engine-setup`) as plugin `movie-engine@vladtarrow-movie-engine`. Skills only work inside a Movie Engine folder; outside one they point to `movie-engine-setup`. Not checked with `claude plugin validate` (no CLI on this PC). |
 | `kdenlive.cmd [project]` | Start Kdenlive for the user (normal window); a project opens through `tools/kd-open.ps1`. Redirects USERPROFILE/APPDATA/LOCALAPPDATA/XDG_* to `engine/profile-kdenlive`. |
 | `open-last-project.cmd` (repo root) | For the user: opens Kdenlive with the project open last, via `tools/kd-open-last.ps1` (newest existing entry of `[Recent Files]`). Starts empty when there is none. |
@@ -82,7 +82,7 @@ Run PowerShell scripts with `powershell -NoProfile -ExecutionPolicy Bypass -File
 
 - Scripts containing non-ASCII text must be saved as **UTF-8 with BOM**, otherwise PowerShell 5.1 misreads them and fails to parse.
 - Each tool call is a fresh shell: dot-source helpers in the same command that uses them.
-- **Test Kdenlive instances run only through `tools/kd-hidden.ps1`** (own desktop, own profile, own TEMP). They cannot take the focus and cannot see the user's Kdenlive. Never start a test instance on the user's desktop.
+- **Test Kdenlive instances run only through `tools/kd-hidden.ps1`** (own desktop, own profile, own TEMP `kd-hidden-<id>`, deleted when the run ends, so test folders do not pile up in the user's TEMP; copy anything you want to keep out of it inside the script). They cannot take the focus and cannot see the user's Kdenlive. Never start a test instance on the user's desktop.
 - Never kill processes by name: other programs on the PC may run their own ffmpeg and node. Kill only a process id you started.
 - **Launchers start Kdenlive only with `Start-KdDetached` (`tools/kd-state.ps1`).** `Process.Start` with `UseShellExecute=$false` passes the output pipe on (the caller hangs until Kdenlive is closed) and ignores `WindowStyle` (no minimized start). The splash also uses up the show flag, so the helper minimizes the main window without activation.
 - **Never `FindFirst(Descendants)` from the Kdenlive main window of a loaded project.** On a 1000-clip project one such search freezes the editor for 30-70 s. Use the narrow finders in `tools/kd-ui.ps1`.

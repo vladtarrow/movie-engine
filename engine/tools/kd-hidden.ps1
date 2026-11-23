@@ -55,9 +55,22 @@ $log = Join-Path $env:TEMP "kd-hidden-$id.log"
 $body = "`$global:LASTEXITCODE = 0`r`ntry { & '$($Script.Replace("'", "''"))' $ArgList *> '$($log.Replace("'", "''"))'; exit `$LASTEXITCODE }`r`ncatch { `"ERROR: `$(`$_.Exception.Message) `$(`$_.InvocationInfo.PositionMessage)`" | Out-File -Append '$($log.Replace("'", "''"))'; exit 1 }`r`n"
 [IO.File]::WriteAllText($wrap, $body, (New-Object Text.UTF8Encoding($true)))
 $code = 1
+# The script and everything it starts get their own TEMP (test Kdenlive folders, profiles, renders), removed when
+# the run ends; the job object has ended every process by then, so nothing holds the files.
+$runTemp = Join-Path $env:TEMP "kd-hidden-$id"
+[void][IO.Directory]::CreateDirectory($runTemp)
+$oldTemp = $env:TEMP; $oldTmp = $env:TMP
 try {
-    $code = [KdHidden]::Run("powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$wrap`"", (Split-Path $Script -Parent), $TimeoutSec)
+    $env:TEMP = $runTemp; $env:TMP = $runTemp   # inherited by the hidden process (CreateProcess with no environment block)
+    try { $code = [KdHidden]::Run("powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$wrap`"", (Split-Path $Script -Parent), $TimeoutSec) }
+    finally { $env:TEMP = $oldTemp; $env:TMP = $oldTmp }
     if (Test-Path $log) { Get-Content $log }
     if ($code -eq 124) { "TIMEOUT after $TimeoutSec s" }
-} finally { Remove-Item $wrap, $log -Force -ErrorAction SilentlyContinue }
+} finally {
+    Remove-Item $wrap, $log -Force -ErrorAction SilentlyContinue
+    foreach ($try in 1..5) {
+        try { if (Test-Path -LiteralPath $runTemp) { Remove-Item -LiteralPath $runTemp -Recurse -Force -ErrorAction Stop }; break }
+        catch { Start-Sleep -Seconds 1 }
+    }
+}
 exit $code

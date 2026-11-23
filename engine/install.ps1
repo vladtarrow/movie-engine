@@ -83,6 +83,8 @@ try {
     if ($have) { Say '   ready: msedge-tts and ws are installed' }
     elseif ($DryRun) { Say '   would run: engine\node\npm.cmd install --prefix engine\voice' }
     else {
+        # npm's cache lives in engine\installer (not in git) instead of the Windows profile: nothing outside the folder
+        $env:npm_config_cache = Join-Path $downloads 'npm-cache'
         & (Join-Path $nodeDir 'npm.cmd') install --prefix (Join-Path $engine 'voice') --no-audit --no-fund
         if ($LASTEXITCODE -ne 0) { throw "npm install failed (exit $LASTEXITCODE)" }
         Say '   installed'
