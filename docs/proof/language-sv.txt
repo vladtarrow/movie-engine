@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:19, MOVIE_ENGINE_UI_LANG='sv'
+menu bar: Arkiv | Redigera | Visa | Media | Sekvens | Verktyg | Bildskärm | Markörer | Inställningar |  | Hjälp
+File menu found: True as 'Arkiv'
+Save button found: True as 'Spara'
+Revert item found: True as 'Återställ'
+Open Recent item found: True as 'Öppna senaste'

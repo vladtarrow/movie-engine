@@ -1,3 +1,6 @@
-﻿language check, 2026-11-23 01:25, MOVIE_ENGINE_UI_LANG=''
+﻿language check, 2026-11-23 05:09, MOVIE_ENGINE_UI_LANG='en_US'
 menu bar: File | Edit | View | Media | Sequence | Tool | Monitor | Markers | Settings |  | Help
 File menu found: True as 'File'
+Save button found: True as 'Save'
+Revert item found: True as 'Revert'
+Open Recent item found: True as 'Open Recent'

@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:16, MOVIE_ENGINE_UI_LANG='hr'
+menu bar: Datoteka | Изменить | Pogled | Мультимедиа | Последовательность | Инструменты | Монитор | Oznake | Postavke |  | Pomoć
+File menu found: True as 'Datoteka'
+Save button found: True as 'Spremi'
+Revert item found: True as 'Vrati izvorno'
+Open Recent item found: True as 'Otvori nedavno'

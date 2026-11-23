@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:19, MOVIE_ENGINE_UI_LANG='tr'
+menu bar: Dosya | Düzen | Görünüm | Ortam | Sekans | Araç | Monitör | İmleyiciler | Ayarlar |  | Yardım
+File menu found: True as 'Dosya'
+Save button found: True as 'Kaydet'
+Revert item found: True as 'Eski Haline Döndür'
+Open Recent item found: True as 'Son Kullanılanı Aç'

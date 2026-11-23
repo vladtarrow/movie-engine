@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:18, MOVIE_ENGINE_UI_LANG='ro'
+menu bar: Fișier | Editare | Vizualizare | Мультимедиа | Последовательность | Unealtă | Монитор | Marcatori | Configurări |  | Ajutor
+File menu found: True as 'Fișier'
+Save button found: True as 'Salvează'
+Revert item found: True as 'Anulează'
+Open Recent item found: True as 'Deschide recent'

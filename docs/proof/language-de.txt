@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:10, MOVIE_ENGINE_UI_LANG='de'
+menu bar: Datei | Bearbeiten | Ansicht | Мультимедиа | Последовательность | Werkzeug | Monitor | Markierungen | Einstellungen |  | Hilfe
+File menu found: True as 'Datei'
+Save button found: True as 'Speichern'
+Revert item found: True as 'Zuletzt gespeicherte Fassung'
+Open Recent item found: True as 'Zuletzt geöffnete Dateien'

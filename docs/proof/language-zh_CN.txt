@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:11, MOVIE_ENGINE_UI_LANG='zh_CN'
+menu bar: 文件(F) | 编辑 | 视图 | 媒体 | 序列 | 工具 | 监视器 | 标记 | 设置(S) |  | 帮助(H)
+File menu found: True as '文件(F)'
+Save button found: True as '保存(S)'
+Revert item found: True as '还原(V)'
+Open Recent item found: True as '打开最近文件(R)'

@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:18, MOVIE_ENGINE_UI_LANG='sk'
+menu bar: Súbor | Upraviť | Zobrazenie | Média | Sekvencia | Nástroj | Monitor | Značky | Nastavenie |  | Pomocník
+File menu found: True as 'Súbor'
+Save button found: True as 'Uložiť'
+Revert item found: True as 'Vrátiť'
+Open Recent item found: True as 'Otvoriť nedávne'

@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:17, MOVIE_ENGINE_UI_LANG='lv'
+menu bar: Datne | Rediģēt | Skats | Мультимедиа | Последовательность | Rīks | Monitors | Marķieri | Iestatījumi |  | Palīdzība
+File menu found: True as 'Datne'
+Save button found: True as 'Saglabāt'
+Revert item found: True as 'Atstatīt'
+Open Recent item found: True as 'Atvērt nesenu'

@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:15, MOVIE_ENGINE_UI_LANG='et'
+menu bar: Fail | Muuda | Vaade | Мультимедиа | Последовательность | Tööriist | Monitor | Markerid | Seadistused |  | Abi
+File menu found: True as 'Fail'
+Save button found: True as 'Salvesta'
+Revert item found: True as 'Lähtesta'
+Open Recent item found: True as 'Ava viimati kasutatud'

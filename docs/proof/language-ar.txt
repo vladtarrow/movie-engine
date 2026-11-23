@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:13, MOVIE_ENGINE_UI_LANG='ar'
+menu bar: ملف | حرّر | اعرض | الوسائط | التسلسل | أداة | راقب | العلامات | إعدادات |  | مساعدة
+File menu found: True as 'ملف'
+Save button found: True as 'احفظ'
+Revert item found: True as 'اعكس'
+Open Recent item found: True as 'افتح ملفًا حديثًا'

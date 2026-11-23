@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:14, MOVIE_ENGINE_UI_LANG='ca'
+menu bar: Fitxer | Edita | Vista | Multimèdia | Seqüència | Eina | Monitor | Marcadors | Arranjament |  | Ajuda
+File menu found: True as 'Fitxer'
+Save button found: True as 'Desa'
+Revert item found: True as 'Reverteix'
+Open Recent item found: True as 'Obre'n un de recent'

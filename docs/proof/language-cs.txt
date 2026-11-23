@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:14, MOVIE_ENGINE_UI_LANG='cs'
+menu bar: Soubor | Upravit | Pohled | Média | Posloupnost | Nástroj | Monitor | Záložky | Nastavení |  | Nápověda
+File menu found: True as 'Soubor'
+Save button found: True as 'Uložit'
+Revert item found: True as 'Vrátit'
+Open Recent item found: True as 'Otevřít nedávný'

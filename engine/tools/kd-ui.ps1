@@ -23,7 +23,7 @@ $script:KdNames = @{
                 'احفظ', 'Snimi', 'Desa', 'Uložit', 'Gem', 'Αποθήκευση', 'Salvesta', 'Tallenna', 'Sábháil', 'Spremi', 'Mentés',
                 'Įrašyti', 'Saglabāt', 'Lagre', 'Opslaan', 'Salvează', 'Uložiť', 'Shrani', 'Spara', 'Kaydet')
     Revert  = @('Revert', 'Восстановить', 'Відновити', 'Zuletzt gespeicherte Fassung', 'Annuler', 'Revertir', 'Reverter',
-                '还原(V)', '戻す(V)', 'Przywróć',
+                '还原(V)', '戻す(V)', 'Annulla', 'Przywróć',
                 'اعكس', 'Vrati', 'Reverteix', 'Vrátit', 'Nulstil', 'Επαναφορά', 'Lähtesta', 'Palauta', 'Fill', 'Vrati izvorno',
                 'Visszaállítás', 'Sugrąžinti', 'Atstatīt', 'Tilbakestill', 'Beginwaarde', 'Anulează', 'Vrátiť', 'Povrni',
                 'Återställ', 'Eski Haline Döndür')

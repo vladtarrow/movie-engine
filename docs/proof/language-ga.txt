@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:16, MOVIE_ENGINE_UI_LANG='ga'
+menu bar: Comhad | Eagar | Amharc | Meáin | Seicheamh | Uirlis | Monatóir | Marcóirí | Socruithe |  | Cabhair
+File menu found: True as 'Comhad'
+Save button found: True as 'Sábháil'
+Revert item found: True as 'Fill'
+Open Recent item found: True as 'Oscail Rudaí Deireanacha'

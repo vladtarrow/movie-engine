@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:17, MOVIE_ENGINE_UI_LANG='lt'
+menu bar: Failas | Keisti | Rodyti | Мультимедиа | Последовательность | Įrankis | Монитор | Žymekliai | Nuostatos |  | Pagalba
+File menu found: True as 'Failas'
+Save button found: True as 'Įrašyti'
+Revert item found: True as 'Sugrąžinti'
+Open Recent item found: True as 'Atverti paskiausiai naudotą'

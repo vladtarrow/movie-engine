@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:16, MOVIE_ENGINE_UI_LANG='hu'
+menu bar: Fájl | Szerkesztés | Nézet | Мультимедиа | Последовательность | Eszköz | Монитор | Jelölők | Beállítások |  | Súgó
+File menu found: True as 'Fájl'
+Save button found: True as 'Mentés'
+Revert item found: True as 'Visszaállítás'
+Open Recent item found: True as 'Legutóbbi megnyitása'

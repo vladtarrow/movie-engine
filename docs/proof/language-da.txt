@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:14, MOVIE_ENGINE_UI_LANG='da'
+menu bar: Fil | Redigér | Vis | Мультимедиа | Последовательность | Værktøj | Monitor | Markører | Indstillinger |  | Hjælp
+File menu found: True as 'Fil'
+Save button found: True as 'Gem'
+Revert item found: True as 'Nulstil'
+Open Recent item found: True as 'Åbn nylige'

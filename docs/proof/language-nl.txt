@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:18, MOVIE_ENGINE_UI_LANG='nl'
+menu bar: Bestand | Bewerken | Beeld | Media | Sequentie | Gereedschap | Monitor | Markeringen | Instellingen |  | Help
+File menu found: True as 'Bestand'
+Save button found: True as 'Opslaan'
+Revert item found: True as 'Beginwaarde'
+Open Recent item found: True as 'Recent openen'

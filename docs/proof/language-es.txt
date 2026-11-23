@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:11, MOVIE_ENGINE_UI_LANG='es'
+menu bar: Archivo | Editar | Ver | Medio | Secuencia | Herramientas | Monitor | Marcadores | Preferencias |  | Ayuda
+File menu found: True as 'Archivo'
+Save button found: True as 'Guardar'
+Revert item found: True as 'Revertir'
+Open Recent item found: True as 'Abrir reciente'

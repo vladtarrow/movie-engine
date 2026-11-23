@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:19, MOVIE_ENGINE_UI_LANG='sl'
+menu bar: Datoteka | Uredi | Pogled | Medijska datoteka | Zaporedje | Orodje | Prikaz | Označevalniki | Nastavitve |  | Pomoč
+File menu found: True as 'Datoteka'
+Save button found: True as 'Shrani'
+Revert item found: True as 'Povrni'
+Open Recent item found: True as 'Odpri nedavno'

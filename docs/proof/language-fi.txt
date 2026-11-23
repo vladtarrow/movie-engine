@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:15, MOVIE_ENGINE_UI_LANG='fi'
+menu bar: Tiedosto | Muokkaa | Näkymä | Media | Последовательность | Työkalut | Monitori | Merkit | Asetukset |  | Ohje
+File menu found: True as 'Tiedosto'
+Save button found: True as 'Tallenna'
+Revert item found: True as 'Palauta'
+Open Recent item found: True as 'Avaa viimeaikainen'

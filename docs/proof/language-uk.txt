@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:10, MOVIE_ENGINE_UI_LANG='uk'
+menu bar: Файл | Змінити | Перегляд | Носії | Послідовність | Інструмент | Монітор | Позначки | Параметри |  | Довідка
+File menu found: True as 'Файл'
+Save button found: True as 'Зберегти'
+Revert item found: True as 'Відновити'
+Open Recent item found: True as 'Відкрити недавні'

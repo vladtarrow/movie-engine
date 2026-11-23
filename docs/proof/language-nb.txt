@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:17, MOVIE_ENGINE_UI_LANG='nb'
+menu bar: Fil | Изменить | Вид | Мультимедиа | Последовательность | Инструменты | Skjerm | Маркеры | Innstillinger |  | Hjelp
+File menu found: True as 'Fil'
+Save button found: True as 'Lagre'
+Revert item found: True as 'Tilbakestill'
+Open Recent item found: True as 'Nylig brukt'

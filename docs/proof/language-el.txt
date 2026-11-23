@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:15, MOVIE_ENGINE_UI_LANG='el'
+menu bar: Αρχείο | Επεξεργασία | Вид | Мультимедиа | Последовательность | Инструменты | Монитор | Δείκτες | Ρυθμίσεις |  | Βοήθεια
+File menu found: True as 'Αρχείο'
+Save button found: True as 'Αποθήκευση'
+Revert item found: True as 'Επαναφορά'
+Open Recent item found: True as 'Άνοιγμα πρόσφατου'

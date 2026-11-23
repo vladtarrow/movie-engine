@@ -1,3 +1,6 @@
-﻿language check, 2026-11-23 01:25, MOVIE_ENGINE_UI_LANG='ru'
+﻿language check, 2026-11-23 05:09, MOVIE_ENGINE_UI_LANG='ru'
 menu bar: Файл | Изменить | Вид | Мультимедиа | Последовательность | Инструменты | Монитор | Маркеры | Настройка |  | Справка
 File menu found: True as 'Файл'
+Save button found: True as 'Сохранить'
+Revert item found: True as 'Восстановить'
+Open Recent item found: True as 'Последние файлы'

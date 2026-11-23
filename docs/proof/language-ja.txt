@@ -1,0 +1,6 @@
+﻿language check, 2026-11-23 05:12, MOVIE_ENGINE_UI_LANG='ja'
+menu bar: ファイル(F) | 編集 | ビュー | メディア | シーケンス | ツール | モニタ | マーカー | 設定(S) |  | ヘルプ(H)
+File menu found: True as 'ファイル(F)'
+Save button found: True as '保存(S)'
+Revert item found: True as '戻す(V)'
+Open Recent item found: True as '最近のファイルを開く(R)'
