@@ -49,6 +49,14 @@ An AI-driven video production setup on top of the Kdenlive editor. The AI builds
 2. `npm install --prefix engine/voice` (versions pinned in `engine/voice/package.json`).
 3. Download `kdenlive-26.08.3_standalone.exe` from `https://download.kde.org/stable/kdenlive/26.08/windows/` into `engine/installer/`, check its SHA-256 (above), unpack with `engine\installer\kdenlive-26.08.3_standalone.exe -o"engine\Kdenlive" -y` (7-Zip self-extractor, no admin).
 
+### Before committing: no machine paths
+
+The repository is public, so tracked files must not contain absolute paths of one machine (they expose the user's folders and user name, and break on another PC).
+- **Kdenlive and `kdp.ps1` write absolute paths into every project they save**: the `root` attribute of `<mlt>`, the subtitle filter's `av.filename` (`.../<project>.kdenlive.ass`), and `kdenlive:docproperties.browserurl`. After a tracked project (e.g. under `projects/`) was opened, saved or rebuilt by a test, strip them before committing: drop `root="..."`, reduce `av.filename` to the bare `.ass` file name, delete the `browserurl` property. Edit byte-for-byte (keep CRLF; Git Bash `sed -i` drops the CRs), then check with `kdp.ps1 validate` and `kdp.ps1 frame`.
+- A project without `root` is fine: `kdp.ps1` uses the project's own folder (`Resolve-KdpRoot`) and re-points the subtitle file on load (`Repair-KdpPaths`); verified 2026-11-23 with validate and melt frames (opening such a project in the Kdenlive GUI was not checked).
+- Do not put scratchpad or TEMP paths, or the Windows user name (also its short form such as `ABCDEF~1`), into docs, skills or comments.
+- Search before a commit: `git grep -n -I -i -E "C:[\\/](Users|other)|~1"`.
+
 ### Launchers and tools in `engine/`
 
 | File | Purpose |

@@ -4,7 +4,7 @@
 #  - project lock: one named mutex per project, held by kdp.ps1 from pull to write, and during a reload.
 #  - the environment every Kdenlive started by this engine gets.
 
-# The long spelling of a path. TEMP and some shells hand out short names (TRUSTR~1); mixing the two spellings
+# The long spelling of a path. TEMP and some shells hand out short names (USERNA~1); mixing the two spellings
 # made relative paths climb to C:\ and back down, which broke them as soon as the folder moved (2026-11-22).
 if (-not ('KdPath' -as [type])) {
 Add-Type @"

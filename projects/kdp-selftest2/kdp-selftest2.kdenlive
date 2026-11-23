@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mlt LC_NUMERIC="C" producer="main_bin" root="C:/other/vladtarrow/movie-engine/projects/kdp-selftest2" version="7.43.0">
+<mlt LC_NUMERIC="C" producer="main_bin" version="7.43.0">
  <profile colorspace="709" description="Vertical HD 30 fps" display_aspect_den="16" display_aspect_num="9" frame_rate_den="1" frame_rate_num="30" height="1920" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="1080" />
  <producer id="producer0" in="00:00:00.000" out="00:05:00.000">
   <property name="length">2147483647</property>
@@ -711,7 +711,7 @@
    <property name="disable">1</property>
   </filter>
   <filter id="filter3">
-   <property name="av.filename">C:/other/vladtarrow/movie-engine/projects/kdp-selftest2/kdp-selftest2.kdenlive.ass</property>
+   <property name="av.filename">kdp-selftest2.kdenlive.ass</property>
    <property name="mlt_service">avfilter.subtitles</property>
    <property name="internal_added">237</property>
    <property name="av.alpha">1</property>

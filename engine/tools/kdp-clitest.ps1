@@ -17,7 +17,7 @@ if (Test-Path -LiteralPath $Sandbox) { throw "$Sandbox already exists" }
 [void][IO.Directory]::CreateDirectory("$Sandbox\materials\aigenerated")
 [void][IO.Directory]::CreateDirectory("$Sandbox\projects")
 . (Join-Path $PSScriptRoot 'kd-state.ps1')
-$Sandbox = [KdPath]::Long($Sandbox)     # kdp writes long paths; TEMP may hand out TRUSTR~1
+$Sandbox = [KdPath]::Long($Sandbox)     # kdp writes long paths; TEMP may hand out USERNA~1
 Copy-Item "$realEngine\*.ps1" "$Sandbox\engine"
 Copy-Item "$realEngine\tools" "$Sandbox\engine\tools" -Recurse
 Copy-Item "$realEngine\Kdenlive" "$Sandbox\engine\Kdenlive" -Recurse

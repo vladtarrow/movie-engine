@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mlt LC_NUMERIC="en_US.UTF-8" producer="main_bin" root="C:/other/vladtarrow/movie-engine/projects/proba-kdenlive" version="7.43.0">
+<mlt LC_NUMERIC="en_US.UTF-8" producer="main_bin" version="7.43.0">
  <profile colorspace="709" description="Vertical HD 30 fps" display_aspect_den="16" display_aspect_num="9" frame_rate_den="1" frame_rate_num="30" height="1920" progressive="1" sample_aspect_den="1" sample_aspect_num="1" width="1080" />
  <producer id="producer0" in="00:00:00.000" out="00:00:04.967">
   <property name="length">150</property>
@@ -471,7 +471,6 @@
   <property name="kdenlive:docproperties.activetimeline">{5ba008e9-e6aa-438e-b0fd-afea2ec7ca27}</property>
   <property name="kdenlive:docproperties.audioChannels">2</property>
   <property name="kdenlive:docproperties.binsort">0</property>
-  <property name="kdenlive:docproperties.browserurl">C:/other/vladtarrow/movie-engine/engine/profile-kdenlive/Videos/</property>
   <property name="kdenlive:docproperties.compositing">1</property>
   <property name="kdenlive:docproperties.documentid">1795214000000</property>
   <property name="kdenlive:docproperties.enableTimelineZone">0</property>
