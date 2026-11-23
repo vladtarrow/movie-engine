@@ -103,7 +103,7 @@ flowchart LR
 所有内容都安装在**该文件夹内部**。不需要管理员权限。
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

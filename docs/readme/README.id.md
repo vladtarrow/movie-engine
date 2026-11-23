@@ -103,7 +103,7 @@ Setiap perintah penyuntingan mengikuti siklus aman yang sama:
 Semuanya diinstal **di dalam folder**. Tidak ada yang memerlukan hak admin.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

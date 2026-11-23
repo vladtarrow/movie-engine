@@ -103,7 +103,7 @@ Jeder Bearbeitungsbefehl durchläuft denselben sicheren Zyklus:
 Alles wird **innerhalb des Ordners** installiert. Nichts benötigt Administratorrechte.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

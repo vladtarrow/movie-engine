@@ -103,7 +103,7 @@ Todo comando de edição segue o mesmo ciclo seguro:
 Tudo é instalado **dentro da pasta**. Nada exige direitos de administrador.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

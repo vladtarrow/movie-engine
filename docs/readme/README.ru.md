@@ -103,7 +103,7 @@ flowchart LR
 Всё устанавливается **внутрь папки**. Права администратора не нужны.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

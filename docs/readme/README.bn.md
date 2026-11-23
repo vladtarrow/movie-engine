@@ -103,7 +103,7 @@ flowchart LR
 সবকিছু ইনস্টল হয় **ফোল্ডারের ভেতরেই**। কোনো কিছুর জন্য admin অধিকার লাগে না।
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

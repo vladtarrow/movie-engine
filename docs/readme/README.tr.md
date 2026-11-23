@@ -103,7 +103,7 @@ Her düzenleme komutu aynı güvenli döngüyü izler:
 Her şey **klasörün içine** kurulur. Hiçbir adım yönetici hakkı gerektirmez.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

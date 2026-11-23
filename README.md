@@ -101,7 +101,7 @@ Every editing command follows the same safe cycle:
 Everything is installed **inside the folder**. Nothing needs admin rights.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

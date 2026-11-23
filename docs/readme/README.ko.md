@@ -103,7 +103,7 @@ flowchart LR
 모든 것이 **이 폴더 안에** 설치됩니다. 관리자 권한은 전혀 필요하지 않습니다.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

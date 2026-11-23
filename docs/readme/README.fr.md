@@ -103,7 +103,7 @@ Chaque commande de montage suit le même cycle sûr :
 Tout s'installe **à l'intérieur du dossier**. Aucun droit administrateur n'est nécessaire.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 

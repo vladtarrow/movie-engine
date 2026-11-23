@@ -105,7 +105,7 @@ flowchart LR
 يُثبَّت كل شيء **داخل المجلد**. لا شيء يحتاج إلى صلاحيات المسؤول.
 
 ```powershell
-git clone <repository-url> movie-engine
+git clone https://github.com/vladtarrow/movie-engine.git
 cd movie-engine
 ```
 
